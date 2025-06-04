@@ -203,24 +203,27 @@ header {
 
 /* 導航樣式 */
 .nav-pills .nav-link {
-  border-radius: 6px;
+  border-radius: 50px;  /* 橢圓形按鈕 */
   font-weight: 500;
   transition: all 0.3s ease;
   margin-left: 10px;
   border: 2px solid transparent;
   color: var(--primary-white);
+  padding: 8px 18px;  /* 調整內部間距使橢圓形更明顯 */
 }
 
 .nav-pills .nav-link:hover {
   background-color: var(--primary-gray);
   border-color: var(--primary-green);
   transform: translateY(-2px);
+  border-radius: 50px;  /* 確保懸停狀態也是橢圓形 */
 }
 
 .nav-pills .nav-link.active {
   background-color: var(--primary-green) !important;
   border-color: var(--primary-green) !important;
   color: var(--primary-white) !important;
+  border-radius: 50px;  /* 確保活躍狀態也是橢圓形 */
 }
 
 /* 圖表容器樣式 */
