@@ -1,6 +1,8 @@
 // GPU 資料庫前端應用程式
 class GPUApp {    constructor() {
         this.currentGPUs = [];
+        this.currentSortField = null;
+        this.currentSortDirection = 'asc';
         this.loadAllGPUs();
         this.loadStats();
     }
@@ -124,7 +126,79 @@ class GPUApp {    constructor() {
         this.showLoading(false);
     }
 
-    // 顯示 GPU 資料
+    // 排序 GPU 資料
+    sortGPUs(field) {
+        // 如果點擊同一個欄位，切換排序方向
+        if (this.currentSortField === field) {
+            this.currentSortDirection = this.currentSortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            this.currentSortField = field;
+            this.currentSortDirection = 'asc';
+        }
+
+        const sortedGPUs = [...this.currentGPUs];
+        
+        sortedGPUs.sort((a, b) => {
+            let valueA, valueB;
+            
+            // 根據欄位類型提取適當的值
+            switch (field) {
+                case 'brand':
+                    valueA = a.brand || '';
+                    valueB = b.brand || '';
+                    break;
+                case 'name':
+                    valueA = a.name || '';
+                    valueB = b.name || '';
+                    break;
+                case 'release_year':
+                    valueA = a.release_year ? parseInt(a.release_year) : 0;
+                    valueB = b.release_year ? parseInt(b.release_year) : 0;
+                    break;
+                case 'launch_price':
+                    valueA = a.launch_price ? parseFloat(a.launch_price) : 0;
+                    valueB = b.launch_price ? parseFloat(b.launch_price) : 0;
+                    break;
+                case 'pixel_rate':
+                    valueA = a.pixel_rate ? parseFloat(a.pixel_rate.replace(/[^\d.]/g, '')) : 0;
+                    valueB = b.pixel_rate ? parseFloat(b.pixel_rate.replace(/[^\d.]/g, '')) : 0;
+                    break;
+                case 'texture_rate':
+                    valueA = a.texture_rate ? parseFloat(a.texture_rate.replace(/[^\d.]/g, '')) : 0;
+                    valueB = b.texture_rate ? parseFloat(b.texture_rate.replace(/[^\d.]/g, '')) : 0;
+                    break;                case 'fp32':
+                    // 處理 FP32 性能單位 (GFLOPS 和 TFLOPS)
+                    valueA = this.normalizeFP32(a.fp32);
+                    valueB = this.normalizeFP32(b.fp32);
+                    break;
+                case 'memory_size':
+                    // 處理記憶體大小單位 (GB 和 MB)
+                    valueA = this.normalizeMemory(a.memory_size);
+                    valueB = this.normalizeMemory(b.memory_size);
+                    break;
+                default:
+                    return 0;
+            }
+
+            // 處理文字比較
+            if (typeof valueA === 'string' && typeof valueB === 'string') {
+                if (this.currentSortDirection === 'asc') {
+                    return valueA.localeCompare(valueB);
+                } else {
+                    return valueB.localeCompare(valueA);
+                }
+            }
+            
+            // 處理數字比較
+            if (this.currentSortDirection === 'asc') {
+                return valueA - valueB;
+            } else {
+                return valueB - valueA;
+            }
+        });
+
+        this.displayGPUs(sortedGPUs);
+    }    // 顯示 GPU 資料
     displayGPUs(gpus) {
         const tableContainer = document.getElementById('gpuTable');
         this.updateGPUCount(gpus.length);
@@ -134,18 +208,28 @@ class GPUApp {    constructor() {
             return;
         }
 
+        // 生成排序圖標
+        const getSortIcon = (field) => {
+            if (this.currentSortField !== field) {
+                return `<i class="small ms-1">⇅</i>`;
+            }
+            return this.currentSortDirection === 'asc' 
+                ? `<i class="small text-warning ms-1">▲</i>` 
+                : `<i class="small text-warning ms-1">▼</i>`;
+        };
+
         const table = `
             <table class="table table-striped table-hover">
                 <thead class="table-dark">
                     <tr>
-                        <th>品牌</th>
-                        <th>型號</th>
-                        <th>發布年份</th>
-                        <th>發售價格</th>
-                        <th>像素填充率</th>
-                        <th>紋理填充率</th>
-                        <th>FP32 性能</th>
-                        <th>記憶體大小</th>
+                        <th style="cursor: pointer;" onclick="sortGPUs('brand')">品牌 ${getSortIcon('brand')}</th>
+                        <th style="cursor: pointer;" onclick="sortGPUs('name')">型號 ${getSortIcon('name')}</th>
+                        <th style="cursor: pointer;" onclick="sortGPUs('release_year')">發布年份 ${getSortIcon('release_year')}</th>
+                        <th style="cursor: pointer;" onclick="sortGPUs('launch_price')">發售價格 ${getSortIcon('launch_price')}</th>
+                        <th style="cursor: pointer;" onclick="sortGPUs('pixel_rate')">像素填充率 ${getSortIcon('pixel_rate')}</th>
+                        <th style="cursor: pointer;" onclick="sortGPUs('texture_rate')">紋理填充率 ${getSortIcon('texture_rate')}</th>
+                        <th style="cursor: pointer;" onclick="sortGPUs('fp32')">FP32 性能 ${getSortIcon('fp32')}</th>
+                        <th style="cursor: pointer;" onclick="sortGPUs('memory_size')">記憶體大小 ${getSortIcon('memory_size')}</th>
                         <th>詳細資訊</th>
                     </tr>
                 </thead>
@@ -172,9 +256,7 @@ class GPUApp {    constructor() {
         `;
 
         tableContainer.innerHTML = table;
-    }
-
-    // 取得品牌顏色
+    }    // 取得品牌顏色
     getBrandColor(brand) {
         switch (brand.toUpperCase()) {
             case 'NVIDIA':
@@ -185,6 +267,42 @@ class GPUApp {    constructor() {
                 return 'primary';
             default:
                 return 'secondary';
+        }
+    }
+    
+    // 標準化 FP32 性能值 (統一轉為 GFLOPS)
+    normalizeFP32(value) {
+        if (!value) return 0;
+        
+        // 清除非數字和小數點以外的字符，但保留單位信息
+        const cleanValue = value.toString().replace(/,/g, '');
+        
+        // 檢查是否為 TFLOPS
+        if (cleanValue.toUpperCase().includes('TFLOPS')) {
+            // 將 TFLOPS 轉為 GFLOPS (1 TFLOPS = 1000 GFLOPS)
+            const numValue = parseFloat(cleanValue.replace(/[^\d.]/g, ''));
+            return numValue * 1000;
+        } else {
+            // 已是 GFLOPS 或其他單位
+            return parseFloat(cleanValue.replace(/[^\d.]/g, ''));
+        }
+    }
+    
+    // 標準化記憶體大小 (統一轉為 MB)
+    normalizeMemory(value) {
+        if (!value) return 0;
+        
+        // 清除非數字和小數點以外的字符，但保留單位信息
+        const cleanValue = value.toString().replace(/,/g, '');
+        
+        // 檢查是否為 GB
+        if (cleanValue.toUpperCase().includes('GB')) {
+            // 將 GB 轉為 MB (1 GB = 1024 MB)
+            const numValue = parseFloat(cleanValue.replace(/[^\d.]/g, ''));
+            return numValue * 1024;
+        } else {
+            // 已是 MB 或其他單位
+            return parseFloat(cleanValue.replace(/[^\d.]/g, ''));
         }
     }
 
@@ -225,6 +343,10 @@ function filterByYear() {
 
 function searchGPUs() {
     gpuApp.searchGPUs();
+}
+
+function sortGPUs(field) {
+    gpuApp.sortGPUs(field);
 }
 
 // 按 Enter 鍵搜尋

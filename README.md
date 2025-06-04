@@ -104,7 +104,9 @@ GET /api/chart-data
 
 返回用於生成性能趨勢圖表的資料，包括每年各性能指標的平均值。
 
-## 品項搜尋程式碼
+## 品項搜尋與排序程式碼
+
+### 搜尋功能
 
 以下是前端搜尋功能的核心實現：
 
@@ -128,6 +130,63 @@ async searchGPUs() {
         this.displayError('搜尋 GPU 時發生錯誤');
     }
     this.showLoading(false);
+}
+```
+
+### 排序功能
+
+系統支援依據多種參數對GPU列表進行排序，包括品牌、型號、發布年份、發售價格、像素填充率、紋理填充率、FP32性能和記憶體大小等。排序功能的實現如下：
+
+```javascript
+// 排序 GPU 資料
+sortGPUs(field) {
+    // 如果點擊同一個欄位，切換排序方向
+    if (this.currentSortField === field) {
+        this.currentSortDirection = this.currentSortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+        this.currentSortField = field;
+        this.currentSortDirection = 'asc';
+    }
+
+    const sortedGPUs = [...this.currentGPUs];
+    
+    sortedGPUs.sort((a, b) => {
+        let valueA, valueB;
+        
+        // 根據欄位類型提取適當的值
+        switch (field) {
+            case 'brand':
+                valueA = a.brand || '';
+                valueB = b.brand || '';
+                break;
+            case 'name':
+                valueA = a.name || '';
+                valueB = b.name || '';
+                break;
+            case 'release_year':
+                valueA = a.release_year ? parseInt(a.release_year) : 0;
+                valueB = b.release_year ? parseInt(b.release_year) : 0;
+                break;
+            case 'launch_price':
+                valueA = a.launch_price ? parseFloat(a.launch_price) : 0;
+                valueB = b.launch_price ? parseFloat(b.launch_price) : 0;
+                break;
+            // 其他欄位處理...
+        }
+
+        // 排序邏輯
+        if (typeof valueA === 'string' && typeof valueB === 'string') {
+            return this.currentSortDirection === 'asc' 
+                ? valueA.localeCompare(valueB) 
+                : valueB.localeCompare(valueA);
+        } else {
+            return this.currentSortDirection === 'asc' 
+                ? valueA - valueB 
+                : valueB - valueA;
+        }
+    });
+
+    this.displayGPUs(sortedGPUs);
 }
 ```
 
@@ -166,20 +225,67 @@ const texturePerDollar = parseFloat(gpu.texture_rate) / parseFloat(gpu.launch_pr
 
 ### 2. 浮點運算性能
 
-FP32 (單精度浮點) 性能通常以 GFLOPS 為單位：
+FP32 (單精度浮點) 性能數據格式不統一，有些以 GFLOPS 為單位，有些則以 TFLOPS 為單位，例如：
+- "1,175.6 GFLOPS"
+- "326.4 GFLOPS"
+- "2.289 TFLOPS"
+
+在處理時需要進行單位轉換，通常將所有數據轉換為 GFLOPS 進行運算：
 
 ```javascript
+// 標準化 FP32 性能值 (統一轉為 GFLOPS)
+normalizeFP32(value) {
+    if (!value) return 0;
+    
+    // 清除非數字和小數點以外的字符，但保留單位信息
+    const cleanValue = value.toString().replace(/,/g, '');
+    
+    // 檢查是否為 TFLOPS
+    if (cleanValue.toUpperCase().includes('TFLOPS')) {
+        // 將 TFLOPS 轉為 GFLOPS (1 TFLOPS = 1000 GFLOPS)
+        const numValue = parseFloat(cleanValue.replace(/[^\d.]/g, ''));
+        return numValue * 1000;
+    } else {
+        // 已是 GFLOPS 或其他單位
+        return parseFloat(cleanValue.replace(/[^\d.]/g, ''));
+    }
+}
+
 // 每美元 FP32 性能 (GFLOPS/$)
-const fp32PerDollar = parseFloat(gpu.fp32) / parseFloat(gpu.launch_price);
+const fp32PerDollar = normalizeFP32(gpu.fp32) / parseFloat(gpu.launch_price);
 ```
 
 ### 3. 記憶體容量
 
-記憶體容量通常以 GB 為單位，在計算每美元記憶體大小時：
+記憶體容量數據也存在不同單位，有些以 GB 為單位，有些則以 MB 為單位，例如：
+- "6 GB"
+- "1792 MB"
+- "512 MB"
+- "2.5 GB"
+
+在處理時需要進行單位轉換，通常將所有數據轉換為 MB 進行運算：
 
 ```javascript
-// 每美元記憶體容量 (GB/$)
-const memoryPerDollar = parseFloat(gpu.memory_size) / parseFloat(gpu.launch_price);
+// 標準化記憶體大小 (統一轉為 MB)
+normalizeMemory(value) {
+    if (!value) return 0;
+    
+    // 清除非數字和小數點以外的字符，但保留單位信息
+    const cleanValue = value.toString().replace(/,/g, '');
+    
+    // 檢查是否為 GB
+    if (cleanValue.toUpperCase().includes('GB')) {
+        // 將 GB 轉為 MB (1 GB = 1024 MB)
+        const numValue = parseFloat(cleanValue.replace(/[^\d.]/g, ''));
+        return numValue * 1024;
+    } else {
+        // 已是 MB 或其他單位
+        return parseFloat(cleanValue.replace(/[^\d.]/g, ''));
+    }
+}
+
+// 每美元記憶體容量 (MB/$)
+const memoryPerDollar = normalizeMemory(gpu.memory_size) / parseFloat(gpu.launch_price);
 ```
 
 ## 圖表程式碼
