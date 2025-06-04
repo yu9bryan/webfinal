@@ -1,0 +1,233 @@
+﻿brand,name,release_year,launch_price,pixel_rate,texture_rate,fp16,fp32,fp64,memory_size,source_url
+NVIDIA,NVIDIA Quadro 2000,2010,599,5.000 GPixel/s,20.00 GTexel/s,,480.0 GFLOPS,40.00 GFLOPS (1:12),1024 MB,https://www.techpowerup.com/gpu-specs/quadro-2000.c900
+NVIDIA,NVIDIA Quadro 4000,2010,1199,7.600 GPixel/s,15.20 GTexel/s,,486.4 GFLOPS,243.2 GFLOPS (1:2),2 GB,https://www.techpowerup.com/gpu-specs/quadro-4000.c898
+NVIDIA,NVIDIA Quadro 600,2010,179,2.560 GPixel/s,10.24 GTexel/s,,245.8 GFLOPS,20.48 GFLOPS (1:12),1024 MB,https://www.techpowerup.com/gpu-specs/quadro-600.c1318
+NVIDIA,NVIDIA Quadro 6000,2010,4399,16.07 GPixel/s,32.14 GTexel/s,,"1,027.7 GFLOPS",513.9 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/quadro-6000.c896
+NVIDIA,NVIDIA NVS 300,2011,109,2.080 GPixel/s,4.160 GTexel/s,,39.36 GFLOPS,,512 MB,https://www.techpowerup.com/gpu-specs/nvs-300.c1452
+NVIDIA,NVIDIA Quadro 2000D,2011,599,5.000 GPixel/s,20.00 GTexel/s,,480.0 GFLOPS,40.00 GFLOPS (1:12),1024 MB,https://www.techpowerup.com/gpu-specs/quadro-2000d.c901
+NVIDIA,NVIDIA Quadro 400,2011,169,3.600 GPixel/s,7.200 GTexel/s,,108.0 GFLOPS,,512 MB,https://www.techpowerup.com/gpu-specs/quadro-400.c1317
+NVIDIA,NVIDIA Quadro 4000 Mac Edition,2011,1199,7.600 GPixel/s,15.20 GTexel/s,,486.4 GFLOPS,243.2 GFLOPS (1:2),1792 MB,https://www.techpowerup.com/gpu-specs/quadro-4000-mac-edition.c899
+NVIDIA,NVIDIA Quadro 5000,2011,2499,11.29 GPixel/s,22.57 GTexel/s,,722.3 GFLOPS,361.2 GFLOPS (1:2),2.5 GB,https://www.techpowerup.com/gpu-specs/quadro-5000.c897
+NVIDIA,NVIDIA Quadro 5000 SDI,2011,7899,11.29 GPixel/s,22.57 GTexel/s,,722.3 GFLOPS,361.2 GFLOPS (1:2),2.5 GB,https://www.techpowerup.com/gpu-specs/quadro-5000-sdi.c2438
+NVIDIA,NVIDIA Quadro 6000 SDI,2011,11499,16.07 GPixel/s,32.14 GTexel/s,,"1,027.7 GFLOPS",513.9 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/quadro-6000-sdi.c2141
+NVIDIA,NVIDIA Quadro Plex 7000,2011,14999,18.37 GPixel/s,36.74 GTexel/s,,"1,175.6 GFLOPS",587.8 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/quadro-plex-7000.c902
+NVIDIA,NVIDIA Tesla C2050,2011,2499,16.07 GPixel/s,32.14 GTexel/s,,"1,027.7 GFLOPS",513.9 GFLOPS (1:2),3 GB,https://www.techpowerup.com/gpu-specs/tesla-c2050.c923
+NVIDIA,NVIDIA Tesla C2070,2011,3999.00,16.07 GPixel/s,32.14 GTexel/s,,"1,027.7 GFLOPS",513.9 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/tesla-c2070.c924
+NVIDIA,NVIDIA Tesla C2075,2011,1500,16.07 GPixel/s,32.14 GTexel/s,,"1,027.7 GFLOPS",513.9 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/tesla-c2075.c563
+NVIDIA,NVIDIA Tesla C2090,2011,2499,20.83 GPixel/s,41.66 GTexel/s,,"1,332.2 GFLOPS",666.1 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/tesla-c2090.c2317
+NVIDIA,NVIDIA Tesla M2050,2011,2699,16.07 GPixel/s,32.14 GTexel/s,,"1,030.4 GFLOPS",515.2 GFLOPS (1:2),3 GB,https://www.techpowerup.com/gpu-specs/tesla-m2050.c1534
+NVIDIA,NVIDIA Tesla M2070,2011,3099,16.07 GPixel/s,32.14 GTexel/s,,"1,030.4 GFLOPS",515.2 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/tesla-m2070.c1535
+NVIDIA,NVIDIA Tesla M2070-Q,2011,5489,16.07 GPixel/s,32.14 GTexel/s,,"1,027.7 GFLOPS",513.9 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/tesla-m2070-q.c1536
+NVIDIA,NVIDIA Tesla M2075,2011,2399,16.07 GPixel/s,32.14 GTexel/s,,"1,027.7 GFLOPS",513.9 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/tesla-m2075.c2025
+NVIDIA,NVIDIA Tesla M2090,2011,2500,20.83 GPixel/s,41.66 GTexel/s,,"1,332.2 GFLOPS",666.1 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/tesla-m2090.c1537
+NVIDIA,NVIDIA Tesla S2050,2011,11999,16.07 GPixel/s,32.14 GTexel/s,,"1,027.7 GFLOPS",513.9 GFLOPS (1:2),3 GB,https://www.techpowerup.com/gpu-specs/tesla-s2050.c1538
+NVIDIA,NVIDIA Tesla X2070,2011,2500,18.23 GPixel/s,36.46 GTexel/s,,"1,165.7 GFLOPS",582.8 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/tesla-x2070.c2024
+NVIDIA,NVIDIA Tesla X2090,2011,2500,20.83 GPixel/s,41.66 GTexel/s,,"1,332.2 GFLOPS",666.1 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/tesla-x2090.c1887
+NVIDIA,NVIDIA NVS 1000,2011,2499,3.188 GPixel/s,12.75 GTexel/s,,306.0 GFLOPS,12.75 GFLOPS (1:24),2 GB,https://www.techpowerup.com/gpu-specs/nvs-1000.c2311
+NVIDIA,NVIDIA NVS 310,2012,159,1.046 GPixel/s,4.184 GTexel/s,,100.4 GFLOPS,8.368 GFLOPS (1:12),512 MB,https://www.techpowerup.com/gpu-specs/nvs-310.c1451
+NVIDIA,NVIDIA NVS 510,2012,449,3.188 GPixel/s,12.75 GTexel/s,,306.0 GFLOPS,12.75 GFLOPS (1:24),2 GB,https://www.techpowerup.com/gpu-specs/nvs-510.c1868
+NVIDIA,NVIDIA Quadro 410,2012,149,2.824 GPixel/s,11.30 GTexel/s,,271.1 GFLOPS,11.30 GFLOPS (1:24),512 MB,https://www.techpowerup.com/gpu-specs/quadro-410.c1316
+NVIDIA,NVIDIA Quadro 7000,2012,14499,18.23 GPixel/s,41.66 GTexel/s,,"1,332.2 GFLOPS",666.1 GFLOPS (1:2),6 GB,https://www.techpowerup.com/gpu-specs/quadro-7000.c1840
+NVIDIA,NVIDIA Quadro K5000,2012,2499,22.59 GPixel/s,90.37 GTexel/s,,2.169 TFLOPS,90.37 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/quadro-k5000.c565
+NVIDIA,NVIDIA Quadro K5000 Mac Edition,2012,2249,22.59 GPixel/s,90.37 GTexel/s,,2.169 TFLOPS,90.37 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/quadro-k5000-mac-edition.c1325
+NVIDIA,NVIDIA Tesla K10,2012,5099,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/tesla-k10.c918
+NVIDIA,NVIDIA Tesla K20X,2012,7699,40.99 GPixel/s,164.0 GTexel/s,,3.935 TFLOPS,"1,311.7 GFLOPS (1:3)",6 GB,https://www.techpowerup.com/gpu-specs/tesla-k20x.c2315
+NVIDIA,NVIDIA Tesla K20Xm,2012,7699,40.99 GPixel/s,164.0 GTexel/s,,3.935 TFLOPS,"1,311.7 GFLOPS (1:3)",6 GB,https://www.techpowerup.com/gpu-specs/tesla-k20xm.c1884
+NVIDIA,NVIDIA Tesla K20c,2012,3199,36.71 GPixel/s,146.8 GTexel/s,,3.524 TFLOPS,"1,174.8 GFLOPS (1:3)",5 GB,https://www.techpowerup.com/gpu-specs/tesla-k20c.c564
+NVIDIA,NVIDIA GRID K1,2013,4140,3.400 GPixel/s,13.60 GTexel/s,,326.4 GFLOPS,13.60 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/grid-k1.c1699
+NVIDIA,NVIDIA GRID K100,2013,63,3.400 GPixel/s,13.60 GTexel/s,,326.4 GFLOPS,13.60 GFLOPS (1:24),256 MB,https://www.techpowerup.com/gpu-specs/grid-k100.c2486
+NVIDIA,NVIDIA GRID K140Q,2013,125,3.400 GPixel/s,13.60 GTexel/s,,326.4 GFLOPS,13.60 GFLOPS (1:24),1024 MB,https://www.techpowerup.com/gpu-specs/grid-k140q.c2485
+NVIDIA,NVIDIA GRID K160Q,2013,125,3.400 GPixel/s,13.60 GTexel/s,,326.4 GFLOPS,13.60 GFLOPS (1:24),1024 MB,https://www.techpowerup.com/gpu-specs/grid-k160q.c2667
+NVIDIA,NVIDIA GRID K180Q,2013,125,3.400 GPixel/s,13.60 GTexel/s,,326.4 GFLOPS,13.60 GFLOPS (1:24),1024 MB,https://www.techpowerup.com/gpu-specs/grid-k180q.c2668
+NVIDIA,NVIDIA GRID K2,2013,5199,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/grid-k2.c1700
+NVIDIA,NVIDIA GRID K200,2013,235,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),256 MB,https://www.techpowerup.com/gpu-specs/grid-k200.c2490
+NVIDIA,NVIDIA GRID K240Q,2013,469,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),1024 MB,https://www.techpowerup.com/gpu-specs/grid-k240q.c2489
+NVIDIA,NVIDIA GRID K260Q,2013,937,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),2 GB,https://www.techpowerup.com/gpu-specs/grid-k260q.c2488
+NVIDIA,NVIDIA GRID K280Q,2013,1875,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/grid-k280q.c2487
+NVIDIA,NVIDIA GRID K340,2013,3299,7.632 GPixel/s,30.53 GTexel/s,,732.7 GFLOPS,30.53 GFLOPS (1:24),1024 MB,https://www.techpowerup.com/gpu-specs/grid-k340.c2313
+NVIDIA,NVIDIA GRID K520,2013,3599,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/grid-k520.c2312
+NVIDIA,NVIDIA NVS 315,2013,159,1.046 GPixel/s,4.184 GTexel/s,,100.4 GFLOPS,8.368 GFLOPS (1:12),1024 MB,https://www.techpowerup.com/gpu-specs/nvs-315.c2147
+NVIDIA,NVIDIA Quadro 4100,2013,1500,22.32 GPixel/s,89.26 GTexel/s,,2.142 TFLOPS,89.26 GFLOPS (1:24),2 GB,https://www.techpowerup.com/gpu-specs/quadro-4100.c2309
+NVIDIA,NVIDIA Quadro K2000,2013,599,7.632 GPixel/s,30.53 GTexel/s,,732.7 GFLOPS,30.53 GFLOPS (1:24),2 GB,https://www.techpowerup.com/gpu-specs/quadro-k2000.c1838
+NVIDIA,NVIDIA Quadro K2000D,2013,599,7.632 GPixel/s,30.53 GTexel/s,,732.7 GFLOPS,30.53 GFLOPS (1:24),2 GB,https://www.techpowerup.com/gpu-specs/quadro-k2000d.c2021
+NVIDIA,NVIDIA Quadro K4000,2013,1269,12.96 GPixel/s,51.84 GTexel/s,,"1,244.2 GFLOPS",51.84 GFLOPS (1:24),3 GB,https://www.techpowerup.com/gpu-specs/quadro-k4000.c1841
+NVIDIA,NVIDIA Quadro K5000 SYNC,2013,3299,22.59 GPixel/s,90.37 GTexel/s,,2.169 TFLOPS,90.37 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/quadro-k5000-sync.c2437
+NVIDIA,NVIDIA Quadro K600,2013,199,3.504 GPixel/s,14.02 GTexel/s,,336.4 GFLOPS,14.02 GFLOPS (1:24),1024 MB,https://www.techpowerup.com/gpu-specs/quadro-k600.c1839
+NVIDIA,NVIDIA Quadro K6000,2013,5265,54.12 GPixel/s,216.5 GTexel/s,,5.196 TFLOPS,1.732 TFLOPS (1:3),12 GB,https://www.techpowerup.com/gpu-specs/quadro-k6000.c2426
+NVIDIA,NVIDIA Quadro K6000 SDI,2013,8599,54.12 GPixel/s,216.5 GTexel/s,,5.196 TFLOPS,1.732 TFLOPS (1:3),12 GB,https://www.techpowerup.com/gpu-specs/quadro-k6000-sdi.c2436
+NVIDIA,NVIDIA Tesla K20m,2013,3199,36.71 GPixel/s,146.8 GTexel/s,,3.524 TFLOPS,"1,174.8 GFLOPS (1:3)",5 GB,https://www.techpowerup.com/gpu-specs/tesla-k20m.c2029
+NVIDIA,NVIDIA Tesla K20s,2013,3199,29.90 GPixel/s,119.6 GTexel/s,,2.870 TFLOPS,956.8 GFLOPS (1:3),5 GB,https://www.techpowerup.com/gpu-specs/tesla-k20s.c2044
+NVIDIA,NVIDIA Tesla K40c,2013,7699,52.56 GPixel/s,210.2 GTexel/s,,5.046 TFLOPS,1.682 TFLOPS (1:3),12 GB,https://www.techpowerup.com/gpu-specs/tesla-k40c.c2505
+NVIDIA,NVIDIA Tesla K40d,2013,7699,52.56 GPixel/s,210.2 GTexel/s,,5.046 TFLOPS,1.682 TFLOPS (1:3),12 GB,https://www.techpowerup.com/gpu-specs/tesla-k40d.c3402
+NVIDIA,NVIDIA Tesla K40m,2013,7699,52.56 GPixel/s,210.2 GTexel/s,,5.046 TFLOPS,1.682 TFLOPS (1:3),12 GB,https://www.techpowerup.com/gpu-specs/tesla-k40m.c2529
+NVIDIA,NVIDIA Tesla K40s,2013,7699,52.56 GPixel/s,210.2 GTexel/s,,5.046 TFLOPS,1.682 TFLOPS (1:3),12 GB,https://www.techpowerup.com/gpu-specs/tesla-k40s.c2528
+NVIDIA,NVIDIA Tesla K40st,2013,7699,34.50 GPixel/s,138.0 GTexel/s,,3.312 TFLOPS,"1,104.0 GFLOPS (1:3)",12 GB,https://www.techpowerup.com/gpu-specs/tesla-k40st.c2530
+NVIDIA,NVIDIA Tesla K40t,2013,7699,52.56 GPixel/s,210.2 GTexel/s,,5.046 TFLOPS,1.682 TFLOPS (1:3),12 GB,https://www.techpowerup.com/gpu-specs/tesla-k40t.c3403
+NVIDIA,NVIDIA GRID K120Q,2014,125,3.400 GPixel/s,13.60 GTexel/s,,326.4 GFLOPS,13.60 GFLOPS (1:24),512 MB,https://www.techpowerup.com/gpu-specs/grid-k120q.c2593
+NVIDIA,NVIDIA GRID K220Q,2014,469,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),512 MB,https://www.techpowerup.com/gpu-specs/grid-k220q.c2592
+NVIDIA,NVIDIA GRID K500,2014,3599,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/grid-k500.c2597
+NVIDIA,NVIDIA GRID K520Q,2014,3599,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/grid-k520q.c2594
+NVIDIA,NVIDIA GRID K540Q,2014,3599,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/grid-k540q.c2595
+NVIDIA,NVIDIA GRID K560Q,2014,3599,23.84 GPixel/s,95.36 GTexel/s,,2.289 TFLOPS,95.36 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/grid-k560q.c2596
+NVIDIA,NVIDIA Quadro K2200,2014,3957,17.98 GPixel/s,44.96 GTexel/s,,"1,438.7 GFLOPS",44.96 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/quadro-k2200.c2601
+NVIDIA,NVIDIA Quadro K420,2014,96.67,3.504 GPixel/s,14.02 GTexel/s,,336.4 GFLOPS,14.02 GFLOPS (1:24),1024 MB,https://www.techpowerup.com/gpu-specs/quadro-k420.c2599
+NVIDIA,NVIDIA Quadro K4200,2014,854.99,21.95 GPixel/s,87.81 GTexel/s,,2.107 TFLOPS,87.81 GFLOPS (1:24),4 GB,https://www.techpowerup.com/gpu-specs/quadro-k4200.c2602
+NVIDIA,NVIDIA Quadro K5200,2014,,37.01 GPixel/s,148.0 GTexel/s,,3.553 TFLOPS,148.0 GFLOPS (1:24),8 GB,https://www.techpowerup.com/gpu-specs/quadro-k5200.c2603
+NVIDIA,NVIDIA Quadro K620,2014,,17.98 GPixel/s,26.98 GTexel/s,,863.2 GFLOPS,26.98 GFLOPS (1:32),2 GB,https://www.techpowerup.com/gpu-specs/quadro-k620.c2600
+NVIDIA,NVIDIA Tesla K8,2014,,25.95 GPixel/s,103.8 GTexel/s,,2.491 TFLOPS,103.8 GFLOPS (1:24),8 GB,https://www.techpowerup.com/gpu-specs/tesla-k8.c2619
+NVIDIA,NVIDIA Tesla K80,2014,,42.85 GPixel/s,171.4 GTexel/s,,4.113 TFLOPS,"1,371.1 GFLOPS (1:3)",12 GB,https://www.techpowerup.com/gpu-specs/tesla-k80.c2616
+NVIDIA,NVIDIA GRID M6-8Q,2015,,46.21 GPixel/s,69.31 GTexel/s,,2.218 TFLOPS,69.31 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/grid-m6-8q.c3052
+NVIDIA,NVIDIA GRID M60-1Q,2015,,75.39 GPixel/s,150.8 GTexel/s,,4.825 TFLOPS,150.8 GFLOPS (1:32),1024 MB,https://www.techpowerup.com/gpu-specs/grid-m60-1q.c3087
+NVIDIA,NVIDIA GRID M60-2Q,2015,,75.39 GPixel/s,150.8 GTexel/s,,4.825 TFLOPS,150.8 GFLOPS (1:32),2 GB,https://www.techpowerup.com/gpu-specs/grid-m60-2q.c3088
+NVIDIA,NVIDIA GRID M60-4A,2015,,75.39 GPixel/s,150.8 GTexel/s,,4.825 TFLOPS,150.8 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/grid-m60-4a.c3090
+NVIDIA,NVIDIA GRID M60-8Q,2015,,75.39 GPixel/s,150.8 GTexel/s,,4.825 TFLOPS,150.8 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/grid-m60-8q.c3089
+NVIDIA,NVIDIA NVS 810,2015,,16.53 GPixel/s,33.06 GTexel/s,,"1,057.8 GFLOPS",33.06 GFLOPS (1:32),2 GB,https://www.techpowerup.com/gpu-specs/nvs-810.c2772
+NVIDIA,NVIDIA Quadro K1200,2015,,17.98 GPixel/s,35.97 GTexel/s,,"1,151.0 GFLOPS",35.97 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/quadro-k1200.c2641
+NVIDIA,NVIDIA Quadro M4000,2015,,49.47 GPixel/s,80.39 GTexel/s,,2.573 TFLOPS,80.39 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/quadro-m4000.c2757
+NVIDIA,NVIDIA Quadro M5000,2015,,66.43 GPixel/s,132.9 GTexel/s,,4.252 TFLOPS,132.9 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/quadro-m5000.c2756
+NVIDIA,NVIDIA Quadro M6000,2015,,106.9 GPixel/s,213.9 GTexel/s,,6.844 TFLOPS,213.9 GFLOPS (1:32),12 GB,https://www.techpowerup.com/gpu-specs/quadro-m6000.c2638
+NVIDIA,NVIDIA Tesla M4,2015,,34.30 GPixel/s,68.61 GTexel/s,,2.195 TFLOPS,68.61 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/tesla-m4.c2770
+NVIDIA,NVIDIA Tesla M40,2015,,106.8 GPixel/s,213.5 GTexel/s,,6.832 TFLOPS,213.5 GFLOPS (1:32),12 GB,https://www.techpowerup.com/gpu-specs/tesla-m40.c2771
+NVIDIA,NVIDIA Tesla M40 24 GB,2015,,106.8 GPixel/s,213.5 GTexel/s,,6.832 TFLOPS,213.5 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/tesla-m40-24-gb.c3838
+NVIDIA,NVIDIA Tesla M60,2015,,75.39 GPixel/s,150.8 GTexel/s,,4.825 TFLOPS,150.8 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/tesla-m60.c2760
+NVIDIA,NVIDIA GRID M10-8Q,2016,,20.90 GPixel/s,52.24 GTexel/s,,1.672 TFLOPS,52.24 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/grid-m10-8q.c3086
+NVIDIA,NVIDIA GRID M3-3020,2016,,20.90 GPixel/s,52.24 GTexel/s,,1.672 TFLOPS,52.24 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/grid-m3-3020.c3084
+NVIDIA,NVIDIA GRID M40,2016,,16.53 GPixel/s,33.06 GTexel/s,,793.3 GFLOPS,24.79 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/grid-m40.c2518
+NVIDIA,NVIDIA Quadro GP100,2016,,138.5 GPixel/s,323.2 GTexel/s,20.69 TFLOPS (2:1),10.34 TFLOPS,5.172 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/quadro-gp100.c2994
+NVIDIA,NVIDIA Quadro M2000,2016,,37.22 GPixel/s,55.82 GTexel/s,,1.786 TFLOPS,55.82 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/quadro-m2000.c2837
+NVIDIA,NVIDIA Quadro M3000 SE,2016,,29.57 GPixel/s,59.14 GTexel/s,,1.892 TFLOPS,59.14 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/quadro-m3000-se.c2886
+NVIDIA,NVIDIA Quadro M6000 24 GB,2016,4999,106.9 GPixel/s,213.9 GTexel/s,,6.844 TFLOPS,213.9 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/quadro-m6000-24-gb.c2824
+NVIDIA,NVIDIA Quadro P5000,2016,2499,110.9 GPixel/s,277.3 GTexel/s,138.6 GFLOPS (1:64),8.873 TFLOPS,277.3 GFLOPS (1:32),16 GB,https://www.techpowerup.com/gpu-specs/quadro-p5000.c2864
+NVIDIA,NVIDIA Quadro P6000,2016,5999,157.9 GPixel/s,394.8 GTexel/s,197.4 GFLOPS (1:64),12.63 TFLOPS,394.8 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/quadro-p6000.c2865
+NVIDIA,NVIDIA Tesla M10,2016,,20.90 GPixel/s,52.24 GTexel/s,,1.672 TFLOPS,52.24 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/tesla-m10.c3035
+NVIDIA,NVIDIA Tesla P10,2016,,143.3 GPixel/s,358.3 GTexel/s,179.2 GFLOPS (1:64),11.47 TFLOPS,358.3 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/tesla-p10.c3750
+NVIDIA,NVIDIA Tesla P100 DGXS,2016,,142.1 GPixel/s,331.5 GTexel/s,21.22 TFLOPS (2:1),10.61 TFLOPS,5.304 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/tesla-p100-dgxs.c3285
+NVIDIA,NVIDIA Tesla P100 PCIe 12 GB,2016,4599,127.6 GPixel/s,297.7 GTexel/s,19.05 TFLOPS (2:1),9.526 TFLOPS,4.763 TFLOPS (1:2),12 GB,https://www.techpowerup.com/gpu-specs/tesla-p100-pcie-12-gb.c2915
+NVIDIA,NVIDIA Tesla P100 PCIe 16 GB,2016,5699,127.6 GPixel/s,297.7 GTexel/s,19.05 TFLOPS (2:1),9.526 TFLOPS,4.763 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/tesla-p100-pcie-16-gb.c2888
+NVIDIA,NVIDIA Tesla P100 SXM2,2016,,142.1 GPixel/s,331.5 GTexel/s,21.22 TFLOPS (2:1),10.61 TFLOPS,5.304 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/tesla-p100-sxm2.c3183
+NVIDIA,NVIDIA Tesla P4,2016,,71.30 GPixel/s,178.2 GTexel/s,89.12 GFLOPS (1:64),5.704 TFLOPS,178.2 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/tesla-p4.c2879
+NVIDIA,NVIDIA Tesla P40,2016,5699,147.0 GPixel/s,367.4 GTexel/s,183.7 GFLOPS (1:64),11.76 TFLOPS,367.4 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/tesla-p40.c2878
+NVIDIA,NVIDIA P104-100,2017,,110.9 GPixel/s,208.0 GTexel/s,104.0 GFLOPS (1:64),6.655 TFLOPS,208.0 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/p104-100.c2981
+NVIDIA,NVIDIA P106-090,2017,,73.49 GPixel/s,73.49 GTexel/s,36.74 GFLOPS (1:64),2.352 TFLOPS,73.49 GFLOPS (1:32),3 GB,https://www.techpowerup.com/gpu-specs/p106-090.c2999
+NVIDIA,NVIDIA P106-100,2017,,82.03 GPixel/s,136.7 GTexel/s,68.36 GFLOPS (1:64),4.375 TFLOPS,136.7 GFLOPS (1:32),6 GB,https://www.techpowerup.com/gpu-specs/p106-100.c2980
+NVIDIA,NVIDIA Quadro P1000,2017,,22.27 GPixel/s,44.54 GTexel/s,22.27 GFLOPS (1:64),"1,425.4 GFLOPS",44.54 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/quadro-p1000.c2932
+NVIDIA,NVIDIA Quadro P1000,2017,,47.36 GPixel/s,59.20 GTexel/s,29.60 GFLOPS (1:64),1.894 TFLOPS,59.20 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/quadro-p1000.c3680
+NVIDIA,NVIDIA Quadro P2000,2017,,59.20 GPixel/s,94.72 GTexel/s,47.36 GFLOPS (1:64),3.031 TFLOPS,94.72 GFLOPS (1:32),5 GB,https://www.techpowerup.com/gpu-specs/quadro-p2000.c2931
+NVIDIA,NVIDIA Quadro P400,2017,,20.03 GPixel/s,20.03 GTexel/s,10.02 GFLOPS (1:64),641.0 GFLOPS,20.03 GFLOPS (1:32),2 GB,https://www.techpowerup.com/gpu-specs/quadro-p400.c2934
+NVIDIA,NVIDIA Quadro P4000,2017,815,94.72 GPixel/s,165.8 GTexel/s,82.88 GFLOPS (1:64),5.304 TFLOPS,165.8 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/quadro-p4000.c2930
+NVIDIA,NVIDIA Quadro P600,2017,,24.91 GPixel/s,37.37 GTexel/s,18.68 GFLOPS (1:64),"1,195.8 GFLOPS",37.37 GFLOPS (1:32),2 GB,https://www.techpowerup.com/gpu-specs/quadro-p600.c2933
+NVIDIA,NVIDIA Tesla V100 PCIe 16 GB,2017,,176.6 GPixel/s,441.6 GTexel/s,28.26 TFLOPS (2:1),14.13 TFLOPS,7.066 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/tesla-v100-pcie-16-gb.c2957
+NVIDIA,NVIDIA Tesla V100 SXM2 16 GB,2017,,195.8 GPixel/s,489.6 GTexel/s,31.33 TFLOPS (2:1),15.67 TFLOPS,7.834 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/tesla-v100-sxm2-16-gb.c3018
+NVIDIA,NVIDIA P102-100,2018,,134.6 GPixel/s,336.6 GTexel/s,168.3 GFLOPS (1:64),10.77 TFLOPS,336.6 GFLOPS (1:32),5 GB,https://www.techpowerup.com/gpu-specs/p102-100.c3100
+NVIDIA,NVIDIA P102-101,2018,,133.6 GPixel/s,334.0 GTexel/s,167.0 GFLOPS (1:64),10.69 TFLOPS,334.0 GFLOPS (1:32),10 GB,https://www.techpowerup.com/gpu-specs/p102-101.c3284
+NVIDIA,NVIDIA P104-101,2018,,107.7 GPixel/s,269.3 GTexel/s,134.6 GFLOPS (1:64),8.617 TFLOPS,269.3 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/p104-101.c3064
+NVIDIA,NVIDIA Quadro GV100,2018,8999,208.3 GPixel/s,520.6 GTexel/s,33.32 TFLOPS (2:1),16.66 TFLOPS,8.330 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/quadro-gv100.c3066
+NVIDIA,NVIDIA Quadro P620,2018,,21.66 GPixel/s,43.33 GTexel/s,21.66 GFLOPS (1:64),"1,386.5 GFLOPS",43.33 GFLOPS (1:32),2 GB,https://www.techpowerup.com/gpu-specs/quadro-p620.c3085
+NVIDIA,NVIDIA Quadro RTX 4000,2018,899,98.88 GPixel/s,222.5 GTexel/s,14.24 TFLOPS (2:1),7.119 TFLOPS,222.5 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/quadro-rtx-4000.c3336
+NVIDIA,NVIDIA Quadro RTX 5000,2018,2299,116.2 GPixel/s,348.5 GTexel/s,22.30 TFLOPS (2:1),11.15 TFLOPS,348.5 GFLOPS (1:32),16 GB,https://www.techpowerup.com/gpu-specs/quadro-rtx-5000.c3308
+NVIDIA,NVIDIA Quadro RTX 6000,2018,6299,169.9 GPixel/s,509.8 GTexel/s,32.62 TFLOPS (2:1),16.31 TFLOPS,509.8 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/quadro-rtx-6000.c3307
+NVIDIA,NVIDIA Quadro RTX 6000 Passive,2018,6299,149.8 GPixel/s,449.3 GTexel/s,28.75 TFLOPS (2:1),14.38 TFLOPS,449.3 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/quadro-rtx-6000-passive.c3469
+NVIDIA,NVIDIA Quadro RTX 8000,2018,9999,169.9 GPixel/s,509.8 GTexel/s,32.62 TFLOPS (2:1),16.31 TFLOPS,509.8 GFLOPS (1:32),48 GB,https://www.techpowerup.com/gpu-specs/quadro-rtx-8000.c3306
+NVIDIA,NVIDIA Quadro RTX 8000 Passive,2018,9999,155.5 GPixel/s,466.6 GTexel/s,29.86 TFLOPS (2:1),14.93 TFLOPS,466.6 GFLOPS (1:32),48 GB,https://www.techpowerup.com/gpu-specs/quadro-rtx-8000-passive.c3470
+NVIDIA,NVIDIA Tesla T4,2018,,101.8 GPixel/s,254.4 GTexel/s,65.13 TFLOPS (8:1),8.141 TFLOPS,254.4 GFLOPS (1:32),16 GB,https://www.techpowerup.com/gpu-specs/tesla-t4.c3316
+NVIDIA,NVIDIA Tesla T4G,2018,,101.8 GPixel/s,254.4 GTexel/s,65.13 TFLOPS (8:1),8.141 TFLOPS,254.4 GFLOPS (1:32),16 GB,https://www.techpowerup.com/gpu-specs/tesla-t4g.c4134
+NVIDIA,NVIDIA Tesla V100 DGXS 16 GB,2018,,202.5 GPixel/s,506.2 GTexel/s,32.40 TFLOPS (2:1),16.20 TFLOPS,8.100 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/tesla-v100-dgxs-16-gb.c3763
+NVIDIA,NVIDIA Tesla V100 DGXS 32 GB,2018,,195.8 GPixel/s,489.6 GTexel/s,31.33 TFLOPS (2:1),15.67 TFLOPS,7.834 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/tesla-v100-dgxs-32-gb.c3186
+NVIDIA,NVIDIA Tesla V100 FHHL,2018,,165.1 GPixel/s,412.8 GTexel/s,26.42 TFLOPS (2:1),13.21 TFLOPS,6.605 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/tesla-v100-fhhl.c3248
+NVIDIA,NVIDIA Tesla V100 PCIe 32 GB,2018,,176.6 GPixel/s,441.6 GTexel/s,28.26 TFLOPS (2:1),14.13 TFLOPS,7.066 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/tesla-v100-pcie-32-gb.c3184
+NVIDIA,NVIDIA Tesla V100 SXM2 32 GB,2018,,195.8 GPixel/s,489.6 GTexel/s,31.33 TFLOPS (2:1),15.67 TFLOPS,7.834 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/tesla-v100-sxm2-32-gb.c3185
+NVIDIA,NVIDIA Tesla V100 SXM3 32 GB,2018,,204.4 GPixel/s,511.0 GTexel/s,32.71 TFLOPS (2:1),16.35 TFLOPS,8.177 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/tesla-v100-sxm3-32-gb.c3472
+NVIDIA,NVIDIA Quadro P2200,2019,,59.72 GPixel/s,119.4 GTexel/s,59.72 GFLOPS (1:64),3.822 TFLOPS,119.4 GFLOPS (1:32),5 GB,https://www.techpowerup.com/gpu-specs/quadro-p2200.c3442
+NVIDIA,NVIDIA Tesla PG500-216,2019,,176.6 GPixel/s,441.6 GTexel/s,28.26 TFLOPS (2:1),14.13 TFLOPS,7.066 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/tesla-pg500-216.c3791
+NVIDIA,NVIDIA Tesla PG503-216,2019,,195.8 GPixel/s,489.6 GTexel/s,31.33 TFLOPS (2:1),15.67 TFLOPS,7.834 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/tesla-pg503-216.c3790
+NVIDIA,NVIDIA Tesla V100 SXM2 16 GB,2019,,204.4 GPixel/s,511.0 GTexel/s,32.71 TFLOPS (2:1),16.35 TFLOPS,8.177 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/tesla-v100-sxm2-16-gb.c3471
+NVIDIA,NVIDIA Tesla V100S PCIe 32 GB,2019,,204.4 GPixel/s,511.0 GTexel/s,32.71 TFLOPS (2:1),16.35 TFLOPS,8.177 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/tesla-v100s-pcie-32-gb.c3467
+NVIDIA,NVIDIA A100 PCIe 40 GB,2020,,225.6 GPixel/s,609.1 GTexel/s,77.97 TFLOPS (4:1),19.49 TFLOPS,9.746 TFLOPS (1:2),40 GB,https://www.techpowerup.com/gpu-specs/a100-pcie-40-gb.c3623
+NVIDIA,NVIDIA A100 SXM4 40 GB,2020,,225.6 GPixel/s,609.1 GTexel/s,77.97 TFLOPS (4:1),19.49 TFLOPS,9.746 TFLOPS (1:2),40 GB,https://www.techpowerup.com/gpu-specs/a100-sxm4-40-gb.c3506
+NVIDIA,NVIDIA A100 SXM4 80 GB,2020,,225.6 GPixel/s,609.1 GTexel/s,77.97 TFLOPS (4:1),19.49 TFLOPS,9.746 TFLOPS (1:2),80 GB,https://www.techpowerup.com/gpu-specs/a100-sxm4-80-gb.c3746
+NVIDIA,NVIDIA A40 PCIe,2020,,194.9 GPixel/s,584.6 GTexel/s,37.42 TFLOPS (1:1),37.42 TFLOPS,584.6 GFLOPS (1:64),48 GB,https://www.techpowerup.com/gpu-specs/a40-pcie.c3700
+NVIDIA,NVIDIA CMP 100HX-210,2020,,146.8 GPixel/s,367.0 GTexel/s,23.49 TFLOPS (2:1),11.75 TFLOPS,5.873 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/cmp-100hx-210.c4202
+NVIDIA,NVIDIA DRIVE A100 PROD,2020,,270.7 GPixel/s,609.1 GTexel/s,77.97 TFLOPS (4:1),19.49 TFLOPS,9.746 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/drive-a100-prod.c3967
+NVIDIA,NVIDIA GRID A100A,2020,,193.0 GPixel/s,434.2 GTexel/s,55.57 TFLOPS (4:1),13.89 TFLOPS,6.947 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/grid-a100a.c3579
+NVIDIA,NVIDIA GRID A100B,2020,,193.0 GPixel/s,434.2 GTexel/s,55.57 TFLOPS (4:1),13.89 TFLOPS,6.947 TFLOPS (1:2),48 GB,https://www.techpowerup.com/gpu-specs/grid-a100b.c3578
+NVIDIA,NVIDIA GRID RTX T10-16,,,89.28 GPixel/s,312.5 GTexel/s,20.00 TFLOPS (2:1),9.999 TFLOPS,312.5 GFLOPS (1:32),16 GB,https://www.techpowerup.com/gpu-specs/grid-rtx-t10-16.c3502
+NVIDIA,NVIDIA GRID RTX T10-2,2020,,89.28 GPixel/s,312.5 GTexel/s,20.00 TFLOPS (2:1),9.999 TFLOPS,312.5 GFLOPS (1:32),2 GB,https://www.techpowerup.com/gpu-specs/grid-rtx-t10-2.c3815
+NVIDIA,NVIDIA GRID RTX T10-4,2020,,89.28 GPixel/s,312.5 GTexel/s,20.00 TFLOPS (2:1),9.999 TFLOPS,312.5 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/grid-rtx-t10-4.c3500
+NVIDIA,NVIDIA GRID RTX T10-8,,,89.28 GPixel/s,312.5 GTexel/s,20.00 TFLOPS (2:1),9.999 TFLOPS,312.5 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/grid-rtx-t10-8.c3501
+NVIDIA,NVIDIA RTX A6000,2020,4649,201.6 GPixel/s,604.8 GTexel/s,38.71 TFLOPS (1:1),38.71 TFLOPS,604.8 GFLOPS (1:64),48 GB,https://www.techpowerup.com/gpu-specs/rtx-a6000.c3686
+NVIDIA,NVIDIA Tesla T10 16 GB,2020,,89.28 GPixel/s,312.5 GTexel/s,20.00 TFLOPS (2:1),9.999 TFLOPS,312.5 GFLOPS (1:32),16 GB,https://www.techpowerup.com/gpu-specs/tesla-t10-16-gb.c4036
+NVIDIA,NVIDIA A10 PCIe,2021,,162.7 GPixel/s,488.2 GTexel/s,31.24 TFLOPS (1:1),31.24 TFLOPS,976.3 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/a10-pcie.c3793
+NVIDIA,NVIDIA A100 PCIe 80 GB,2021,,225.6 GPixel/s,609.1 GTexel/s,77.97 TFLOPS (4:1),19.49 TFLOPS,9.746 TFLOPS (1:2),80 GB,https://www.techpowerup.com/gpu-specs/a100-pcie-80-gb.c3821
+NVIDIA,NVIDIA A100X,2021,,230.4 GPixel/s,622.1 GTexel/s,79.63 TFLOPS (4:1),19.91 TFLOPS,9.953 TFLOPS (1:2),80 GB,https://www.techpowerup.com/gpu-specs/a100x.c3958
+NVIDIA,NVIDIA A10G,2021,,164.2 GPixel/s,492.5 GTexel/s,31.52 TFLOPS (1:1),31.52 TFLOPS,985.0 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/a10g.c3798
+NVIDIA,NVIDIA A16 PCIe,2021,,56.16 GPixel/s,70.20 GTexel/s,4.493 TFLOPS (1:1),4.493 TFLOPS,140.4 GFLOPS (1:32),16 GB,https://www.techpowerup.com/gpu-specs/a16-pcie.c3794
+NVIDIA,NVIDIA A2,2021,,56.64 GPixel/s,70.80 GTexel/s,4.531 TFLOPS (1:1),4.531 TFLOPS,70.80 GFLOPS (1:64),16 GB,https://www.techpowerup.com/gpu-specs/a2.c3848
+NVIDIA,NVIDIA A2 PCIe,2021,,56.64 GPixel/s,70.80 GTexel/s,4.531 TFLOPS (1:1),4.531 TFLOPS,141.6 GFLOPS (1:32),16 GB,https://www.techpowerup.com/gpu-specs/a2-pcie.c4112
+NVIDIA,NVIDIA A30 PCIe,2021,,138.2 GPixel/s,322.6 GTexel/s,10.32 TFLOPS (1:1),10.32 TFLOPS,5.161 TFLOPS (1:2),24 GB,https://www.techpowerup.com/gpu-specs/a30-pcie.c3792
+NVIDIA,NVIDIA A30X,2021,,138.2 GPixel/s,322.6 GTexel/s,10.32 TFLOPS (1:1),10.32 TFLOPS,5.161 TFLOPS (1:2),24 GB,https://www.techpowerup.com/gpu-specs/a30x.c3968
+NVIDIA,NVIDIA CMP 170HX 10 GB,2021,4299,180.5 GPixel/s,394.8 GTexel/s,50.53 TFLOPS (4:1),12.63 TFLOPS,6.317 TFLOPS (1:2),10 GB,https://www.techpowerup.com/gpu-specs/cmp-170hx-10-gb.c3957
+NVIDIA,NVIDIA CMP 170HX 8 GB,2021,4299,180.5 GPixel/s,394.8 GTexel/s,50.53 TFLOPS (4:1),12.63 TFLOPS,6.317 TFLOPS (1:2),8 GB,https://www.techpowerup.com/gpu-specs/cmp-170hx-8-gb.c3830
+NVIDIA,NVIDIA CMP 30HX,2021,799,85.68 GPixel/s,157.1 GTexel/s,10.05 TFLOPS (2:1),5.027 TFLOPS,157.1 GFLOPS (1:32),6 GB,https://www.techpowerup.com/gpu-specs/cmp-30hx.c3780
+NVIDIA,NVIDIA CMP 40HX,2021,699,105.6 GPixel/s,237.6 GTexel/s,15.21 TFLOPS (2:1),7.603 TFLOPS,237.6 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/cmp-40hx.c3781
+NVIDIA,NVIDIA CMP 50HX,2021,,123.6 GPixel/s,296.6 GTexel/s,22.15 TFLOPS (2:1),11.07 TFLOPS,346.1 GFLOPS (1:32),10 GB,https://www.techpowerup.com/gpu-specs/cmp-50hx.c3782
+NVIDIA,NVIDIA CMP 70HX,2021,,89.28 GPixel/s,167.4 GTexel/s,10.71 TFLOPS (1:1),10.71 TFLOPS,167.4 GFLOPS (1:64),8 GB,https://www.techpowerup.com/gpu-specs/cmp-70hx.c3822
+NVIDIA,NVIDIA CMP 90HX,2021,,136.8 GPixel/s,342.0 GTexel/s,21.89 TFLOPS (1:1),21.89 TFLOPS,342.0 GFLOPS (1:64),10 GB,https://www.techpowerup.com/gpu-specs/cmp-90hx.c3783
+NVIDIA,NVIDIA PG506-207,2021,,138.2 GPixel/s,322.6 GTexel/s,10.32 TFLOPS (1:1),10.32 TFLOPS,5.161 TFLOPS (1:2),24 GB,https://www.techpowerup.com/gpu-specs/pg506-207.c3962
+NVIDIA,NVIDIA PG506-217,2021,,138.2 GPixel/s,322.6 GTexel/s,10.32 TFLOPS (1:1),10.32 TFLOPS,5.161 TFLOPS (1:2),24 GB,https://www.techpowerup.com/gpu-specs/pg506-217.c3963
+NVIDIA,NVIDIA PG506-232,2021,,138.2 GPixel/s,322.6 GTexel/s,10.32 TFLOPS (1:1),10.32 TFLOPS,5.161 TFLOPS (1:2),24 GB,https://www.techpowerup.com/gpu-specs/pg506-232.c3799
+NVIDIA,NVIDIA PG506-242,2021,,138.2 GPixel/s,322.6 GTexel/s,10.32 TFLOPS (1:1),10.32 TFLOPS,5.161 TFLOPS (1:2),24 GB,https://www.techpowerup.com/gpu-specs/pg506-242.c3823
+NVIDIA,NVIDIA RTX A2000,2021,449,57.60 GPixel/s,124.8 GTexel/s,7.987 TFLOPS (1:1),7.987 TFLOPS,124.8 GFLOPS (1:64),6 GB,https://www.techpowerup.com/gpu-specs/rtx-a2000.c3820
+NVIDIA,NVIDIA RTX A2000 12 GB,2021,449,57.60 GPixel/s,124.8 GTexel/s,7.987 TFLOPS (1:1),7.987 TFLOPS,124.8 GFLOPS (1:64),12 GB,https://www.techpowerup.com/gpu-specs/rtx-a2000-12-gb.c3853
+NVIDIA,NVIDIA RTX A4000,2021,,149.8 GPixel/s,299.5 GTexel/s,19.17 TFLOPS (1:1),19.17 TFLOPS,299.5 GFLOPS (1:64),16 GB,https://www.techpowerup.com/gpu-specs/rtx-a4000.c3756
+NVIDIA,NVIDIA RTX A4000H,2021,,149.8 GPixel/s,299.5 GTexel/s,19.17 TFLOPS (1:1),19.17 TFLOPS,299.5 GFLOPS (1:64),16 GB,https://www.techpowerup.com/gpu-specs/rtx-a4000h.c3969
+NVIDIA,NVIDIA RTX A4500,2021,,158.4 GPixel/s,369.6 GTexel/s,23.65 TFLOPS (1:1),23.65 TFLOPS,369.6 GFLOPS (1:64),20 GB,https://www.techpowerup.com/gpu-specs/rtx-a4500.c3849
+NVIDIA,NVIDIA RTX A500,2021,,56.64 GPixel/s,113.3 GTexel/s,7.250 TFLOPS (1:1),7.250 TFLOPS,113.3 GFLOPS (1:64),4 GB,https://www.techpowerup.com/gpu-specs/rtx-a500.c3989
+NVIDIA,NVIDIA RTX A5000,2021,,162.7 GPixel/s,433.9 GTexel/s,27.77 TFLOPS (1:1),27.77 TFLOPS,433.9 GFLOPS (1:64),24 GB,https://www.techpowerup.com/gpu-specs/rtx-a5000.c3748
+NVIDIA,NVIDIA RTX A5000-12Q,2021,,162.7 GPixel/s,433.9 GTexel/s,27.77 TFLOPS (1:1),27.77 TFLOPS,433.9 GFLOPS (1:64),12 GB,https://www.techpowerup.com/gpu-specs/rtx-a5000-12q.c3991
+NVIDIA,NVIDIA RTX A5000-8Q,2021,,162.7 GPixel/s,433.9 GTexel/s,27.77 TFLOPS (1:1),27.77 TFLOPS,433.9 GFLOPS (1:64),8 GB,https://www.techpowerup.com/gpu-specs/rtx-a5000-8q.c3990
+NVIDIA,NVIDIA T1000,2021,,44.64 GPixel/s,78.12 GTexel/s,5.000 TFLOPS (2:1),2.500 TFLOPS,78.12 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/t1000.c3797
+NVIDIA,NVIDIA T1000 8 GB,2021,,44.64 GPixel/s,78.12 GTexel/s,5.000 TFLOPS (2:1),2.500 TFLOPS,78.12 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/t1000-8-gb.c3842
+NVIDIA,NVIDIA T400,2021,,22.80 GPixel/s,34.20 GTexel/s,2.189 TFLOPS (2:1),"1,094.4 GFLOPS",34.20 GFLOPS (1:32),2 GB,https://www.techpowerup.com/gpu-specs/t400.c3808
+NVIDIA,NVIDIA T400 4 GB,2021,,22.80 GPixel/s,34.20 GTexel/s,2.189 TFLOPS (2:1),"1,094.4 GFLOPS",34.20 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/t400-4-gb.c3843
+NVIDIA,NVIDIA T600,2021,,42.72 GPixel/s,53.40 GTexel/s,3.418 TFLOPS (2:1),1.709 TFLOPS,53.40 GFLOPS (1:32),4 GB,https://www.techpowerup.com/gpu-specs/t600.c3796
+NVIDIA,NVIDIA A10M,2022,,130.8 GPixel/s,366.2 GTexel/s,23.44 TFLOPS (1:1),23.44 TFLOPS,732.5 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/a10m.c4200
+NVIDIA,NVIDIA A800 PCIe 40 GB,2022,,225.6 GPixel/s,609.1 GTexel/s,77.97 TFLOPS (4:1),19.49 TFLOPS,9.746 TFLOPS (1:2),40 GB,https://www.techpowerup.com/gpu-specs/a800-pcie-40-gb.c3964
+NVIDIA,NVIDIA A800 PCIe 80 GB,2022,,225.6 GPixel/s,609.1 GTexel/s,77.97 TFLOPS (4:1),19.49 TFLOPS,9.746 TFLOPS (1:2),80 GB,https://www.techpowerup.com/gpu-specs/a800-pcie-80-gb.c3965
+NVIDIA,NVIDIA A800 SXM4 80 GB,2022,,225.6 GPixel/s,609.1 GTexel/s,77.97 TFLOPS (4:1),19.49 TFLOPS,9.746 TFLOPS (1:2),80 GB,https://www.techpowerup.com/gpu-specs/a800-sxm4-80-gb.c3966
+NVIDIA,NVIDIA H100 PCIe 80 GB,2022,,42.12 GPixel/s,800.3 GTexel/s,204.9 TFLOPS (4:1),51.22 TFLOPS,25.61 TFLOPS (1:2),80 GB,https://www.techpowerup.com/gpu-specs/h100-pcie-80-gb.c3899
+NVIDIA,NVIDIA H100 SXM5 80 GB,2022,,47.52 GPixel/s,"1,045.4 GTexel/s",267.6 TFLOPS (4:1),66.91 TFLOPS,33.45 TFLOPS (1:2),80 GB,https://www.techpowerup.com/gpu-specs/h100-sxm5-80-gb.c3900
+NVIDIA,NVIDIA L40,2022,,478.1 GPixel/s,"1,414.3 GTexel/s",90.52 TFLOPS (1:1),90.52 TFLOPS,"1,414.3 GFLOPS (1:64)",48 GB,https://www.techpowerup.com/gpu-specs/l40.c3959
+NVIDIA,NVIDIA L40 CNX,2022,,475.2 GPixel/s,"1,405.8 GTexel/s",89.97 TFLOPS (1:1),89.97 TFLOPS,"1,405.8 GFLOPS (1:64)",24 GB,https://www.techpowerup.com/gpu-specs/l40-cnx.c3961
+NVIDIA,NVIDIA L40G,2022,,475.2 GPixel/s,"1,405.8 GTexel/s",89.97 TFLOPS (1:1),89.97 TFLOPS,"1,405.8 GFLOPS (1:64)",24 GB,https://www.techpowerup.com/gpu-specs/l40g.c3960
+NVIDIA,NVIDIA L40S,2022,,483.8 GPixel/s,"1,431.4 GTexel/s",91.61 TFLOPS (1:1),91.61 TFLOPS,"1,431.4 GFLOPS (1:64)",48 GB,https://www.techpowerup.com/gpu-specs/l40s.c4173
+NVIDIA,NVIDIA RTX 6000 Ada Generation,2022,6799,481.0 GPixel/s,"1,422.8 GTexel/s",91.06 TFLOPS (1:1),91.06 TFLOPS,"1,422.8 GFLOPS (1:64)",48 GB,https://www.techpowerup.com/gpu-specs/rtx-6000-ada-generation.c3933
+NVIDIA,NVIDIA RTX A5500,2022,,159.8 GPixel/s,532.8 GTexel/s,34.10 TFLOPS (1:1),34.10 TFLOPS,532.8 GFLOPS (1:64),24 GB,https://www.techpowerup.com/gpu-specs/rtx-a5500.c3901
+NVIDIA,NVIDIA Tesla T40 24 GB,,,149.8 GPixel/s,449.3 GTexel/s,28.75 TFLOPS (2:1),14.38 TFLOPS,449.3 GFLOPS (1:32),24 GB,https://www.techpowerup.com/gpu-specs/tesla-t40-24-gb.c3942
+NVIDIA,NVIDIA H100 CNX,2023,,44.28 GPixel/s,841.3 GTexel/s,215.4 TFLOPS (4:1),53.84 TFLOPS,26.92 TFLOPS (1:2),80 GB,https://www.techpowerup.com/gpu-specs/h100-cnx.c4131
+NVIDIA,NVIDIA H100 PCIe 96 GB,2023,,44.09 GPixel/s,969.9 GTexel/s,248.3 TFLOPS (4:1),62.08 TFLOPS,31.04 TFLOPS (1:2),96 GB,https://www.techpowerup.com/gpu-specs/h100-pcie-96-gb.c4164
+NVIDIA,NVIDIA H100 SXM5 64 GB,2023,,47.52 GPixel/s,"1,045.4 GTexel/s",267.6 TFLOPS (4:1),66.91 TFLOPS,33.45 TFLOPS (1:2),64 GB,https://www.techpowerup.com/gpu-specs/h100-sxm5-64-gb.c4165
+NVIDIA,NVIDIA H100 SXM5 94 GB,2023,,47.52 GPixel/s,"1,045.4 GTexel/s",267.6 TFLOPS (4:1),66.91 TFLOPS,33.45 TFLOPS (1:2),94 GB,https://www.techpowerup.com/gpu-specs/h100-sxm5-94-gb.c4294
+NVIDIA,NVIDIA H100 SXM5 96 GB,2023,,47.52 GPixel/s,"1,045.4 GTexel/s",267.6 TFLOPS (4:1),66.91 TFLOPS,33.45 TFLOPS (1:2),96 GB,https://www.techpowerup.com/gpu-specs/h100-sxm5-96-gb.c3974
+NVIDIA,NVIDIA H800 PCIe 80 GB,2023,,42.12 GPixel/s,800.3 GTexel/s,204.9 TFLOPS (4:1),51.22 TFLOPS,25.61 TFLOPS (1:2),80 GB,https://www.techpowerup.com/gpu-specs/h800-pcie-80-gb.c4181
+NVIDIA,NVIDIA H800 SXM5,2023,,42.12 GPixel/s,926.6 GTexel/s,237.2 TFLOPS (4:1),59.30 TFLOPS,29.65 TFLOPS (1:2),80 GB,https://www.techpowerup.com/gpu-specs/h800-sxm5.c3975
+NVIDIA,NVIDIA L20,2023,,322.6 GPixel/s,927.4 GTexel/s,59.35 TFLOPS (1:1),59.35 TFLOPS,927.4 GFLOPS (1:64),48 GB,https://www.techpowerup.com/gpu-specs/l20.c4206
+NVIDIA,NVIDIA L4,2023,,163.2 GPixel/s,489.6 GTexel/s,30.29 TFLOPS (1:1),30.29 TFLOPS,473.3 GFLOPS (1:64),24 GB,https://www.techpowerup.com/gpu-specs/l4.c4091
+NVIDIA,NVIDIA RTX 3500 Embedded Ada Generation,2023,,144.0 GPixel/s,360.0 GTexel/s,23.04 TFLOPS (1:1),23.04 TFLOPS,360.0 GFLOPS (1:64),12 GB,https://www.techpowerup.com/gpu-specs/rtx-3500-embedded-ada-generation.c4201
+NVIDIA,NVIDIA RTX 4000 Ada Generation,2023,,139.2 GPixel/s,417.6 GTexel/s,26.73 TFLOPS (1:1),26.73 TFLOPS,417.6 GFLOPS (1:64),20 GB,https://www.techpowerup.com/gpu-specs/rtx-4000-ada-generation.c4171
+NVIDIA,NVIDIA RTX 4000 SFF Ada Generation,2023,,99.84 GPixel/s,299.5 GTexel/s,19.17 TFLOPS (1:1),19.17 TFLOPS,299.5 GFLOPS (1:64),20 GB,https://www.techpowerup.com/gpu-specs/rtx-4000-sff-ada-generation.c4139
+NVIDIA,NVIDIA RTX 4500 Ada Generation,2023,,206.4 GPixel/s,619.2 GTexel/s,39.63 TFLOPS (1:1),39.63 TFLOPS,619.2 GFLOPS (1:64),24 GB,https://www.techpowerup.com/gpu-specs/rtx-4500-ada-generation.c4172
+NVIDIA,NVIDIA RTX 5000 Ada Generation,2023,,448.8 GPixel/s,"1,020.0 GTexel/s",65.28 TFLOPS (1:1),65.28 TFLOPS,"1,020.0 GFLOPS (1:64)",32 GB,https://www.techpowerup.com/gpu-specs/rtx-5000-ada-generation.c4152
+NVIDIA,NVIDIA B100,2024,,44.09 GPixel/s,969.9 GTexel/s,248.3 TFLOPS (4:1),62.08 TFLOPS,31.04 TFLOPS (1:2),96 GB,https://www.techpowerup.com/gpu-specs/b100.c4275
+NVIDIA,NVIDIA B200 SXM 192 GB,2024,,44.09 GPixel/s,969.9 GTexel/s,248.3 TFLOPS (4:1),62.08 TFLOPS,31.04 TFLOPS (1:2),96 GB,https://www.techpowerup.com/gpu-specs/b200-sxm-192-gb.c4210
+NVIDIA,NVIDIA H200 NVL,2024,,42.84 GPixel/s,942.5 GTexel/s,241.3 TFLOPS (4:1),60.32 TFLOPS,30.16 TFLOPS (1:2),141 GB,https://www.techpowerup.com/gpu-specs/h200-nvl.c4254
+NVIDIA,NVIDIA H200 SXM 141 GB,2024,,47.52 GPixel/s,"1,045.4 GTexel/s",267.6 TFLOPS (4:1),66.91 TFLOPS,33.45 TFLOPS (1:2),141 GB,https://www.techpowerup.com/gpu-specs/h200-sxm-141-gb.c4255
+NVIDIA,NVIDIA RTX 2000 Ada Generation,2024,649,102.2 GPixel/s,187.4 GTexel/s,12.00 TFLOPS (1:1),12.00 TFLOPS,187.4 GFLOPS (1:64),16 GB,https://www.techpowerup.com/gpu-specs/rtx-2000-ada-generation.c4199
+NVIDIA,NVIDIA RTX 5880 Ada Generation,2024,,433.0 GPixel/s,"1,082.4 GTexel/s",69.27 TFLOPS (1:1),69.27 TFLOPS,"1,082.4 GFLOPS (1:64)",48 GB,https://www.techpowerup.com/gpu-specs/rtx-5880-ada-generation.c4191
+NVIDIA,NVIDIA RTX A1000,2024,,46.78 GPixel/s,105.3 GTexel/s,6.737 TFLOPS (1:1),6.737 TFLOPS,105.3 GFLOPS (1:64),8 GB,https://www.techpowerup.com/gpu-specs/rtx-a1000.c4211
+NVIDIA,NVIDIA RTX A400,2024,,28.19 GPixel/s,42.29 GTexel/s,2.706 TFLOPS (1:1),2.706 TFLOPS,42.29 GFLOPS (1:64),4 GB,https://www.techpowerup.com/gpu-specs/rtx-a400.c4212
+NVIDIA,NVIDIA RTX PRO 4000 Blackwell,2025,,251.2 GPixel/s,732.8 GTexel/s,46.90 TFLOPS (1:1),46.90 TFLOPS,732.8 GFLOPS (1:64),24 GB,https://www.techpowerup.com/gpu-specs/rtx-pro-4000-blackwell.c4279
+NVIDIA,NVIDIA RTX PRO 4500 Blackwell,2025,,293.1 GPixel/s,858.4 GTexel/s,54.94 TFLOPS (1:1),54.94 TFLOPS,858.4 GFLOPS (1:64),32 GB,https://www.techpowerup.com/gpu-specs/rtx-pro-4500-blackwell.c4278
+NVIDIA,NVIDIA RTX PRO 5000 Blackwell,2025,,460.6 GPixel/s,"1,151.5 GTexel/s",73.69 TFLOPS (1:1),73.69 TFLOPS,"1,151.5 GFLOPS (1:64)",48 GB,https://www.techpowerup.com/gpu-specs/rtx-pro-5000-blackwell.c4276
+NVIDIA,NVIDIA RTX PRO 6000 Blackwell,2025,8565,502.5 GPixel/s,"1,968.0 GTexel/s",126.0 TFLOPS (1:1),126.0 TFLOPS,1.968 TFLOPS (1:64),96 GB,https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272
+NVIDIA,NVIDIA RTX PRO 6000 Blackwell Max-Q,2025,8565,439.3 GPixel/s,"1,720.6 GTexel/s",110.1 TFLOPS (1:1),110.1 TFLOPS,1.721 TFLOPS (1:64),96 GB,https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell-max-q.c4273
+NVIDIA,NVIDIA RTX PRO 6000 Blackwell Server,2025,,502.5 GPixel/s,"1,968.0 GTexel/s",126.0 TFLOPS (1:1),126.0 TFLOPS,1.968 TFLOPS (1:64),96 GB,https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell-server.c4274

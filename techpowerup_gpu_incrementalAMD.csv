@@ -1,0 +1,117 @@
+﻿brand,name,release_year,launch_price,pixel_rate,texture_rate,fp16,fp32,fp64,memory_size,source_url
+AMD,AMD FirePro RG220,2010,159,2.000 GPixel/s,4.000 GTexel/s,,80.00 GFLOPS,,512 MB,https://www.techpowerup.com/gpu-specs/firepro-rg220.c582
+AMD,AMD FirePro RG220A,2010,139 ,2.000 GPixel/s,4.000 GTexel/s,,80.00 GFLOPS,,512 MB,https://www.techpowerup.com/gpu-specs/firepro-rg220a.c584
+AMD,AMD FireStream 9350,2010,799,22.40 GPixel/s,50.40 GTexel/s,,2.016 TFLOPS,403.2 GFLOPS (1:5),2 GB,https://www.techpowerup.com/gpu-specs/firestream-9350.c1184
+AMD,AMD FireStream 9370,2010,,26.40 GPixel/s,66.00 GTexel/s,,2.640 TFLOPS,528.0 GFLOPS (1:5),4 GB,https://www.techpowerup.com/gpu-specs/firestream-9370.c1185
+AMD,AMD FirePro 2270,2011,,2.400 GPixel/s,4.800 GTexel/s,,96.00 GFLOPS,,512 MB,https://www.techpowerup.com/gpu-specs/firepro-2270.c1183
+AMD,AMD FirePro 2270 PCIe x1,2011,149,2.400 GPixel/s,4.800 GTexel/s,,96.00 GFLOPS,,512 MB,https://www.techpowerup.com/gpu-specs/firepro-2270-pcie-x1.c3096
+AMD,AMD FirePro V4900,2011,189,6.400 GPixel/s,19.20 GTexel/s,,768.0 GFLOPS,,1024 MB,https://www.techpowerup.com/gpu-specs/firepro-v4900.c578
+AMD,AMD FirePro V5900,2011,599,19.20 GPixel/s,19.20 GTexel/s,,614.4 GFLOPS,153.6 GFLOPS (1:4),2 GB,https://www.techpowerup.com/gpu-specs/firepro-v5900.c577
+AMD,AMD FirePro V7900,2011,999,23.20 GPixel/s,58.00 GTexel/s,,1.856 TFLOPS,464.0 GFLOPS (1:4),2 GB,https://www.techpowerup.com/gpu-specs/firepro-v7900.c580
+AMD,AMD FirePro V7900 SDI,2011,,23.20 GPixel/s,58.00 GTexel/s,,1.856 TFLOPS,464.0 GFLOPS (1:4),2 GB,https://www.techpowerup.com/gpu-specs/firepro-v7900-sdi.c576
+AMD,AMD FirePro A300,2012,,7.240 GPixel/s,21.72 GTexel/s,,695.0 GFLOPS,,System Shared,https://www.techpowerup.com/gpu-specs/firepro-a300.c1889
+AMD,AMD FirePro A320,2012,,7.640 GPixel/s,22.92 GTexel/s,,733.4 GFLOPS,,System Shared,https://www.techpowerup.com/gpu-specs/firepro-a320.c1890
+AMD,AMD FirePro S10000,2012,3599,30.40 GPixel/s,106.4 GTexel/s,,3.405 TFLOPS,851.2 GFLOPS (1:4),3 GB,https://www.techpowerup.com/gpu-specs/firepro-s10000.c802
+AMD,AMD FirePro S10000 Passive,2012,3599,30.40 GPixel/s,106.4 GTexel/s,,3.405 TFLOPS,851.2 GFLOPS (1:4),3 GB,https://www.techpowerup.com/gpu-specs/firepro-s10000-passive.c2507
+AMD,AMD FirePro S7000,2012,1249,30.40 GPixel/s,76.00 GTexel/s,,2.432 TFLOPS,152.0 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/firepro-s7000.c801
+AMD,AMD FirePro S9000,2012,2499,28.80 GPixel/s,100.8 GTexel/s,,3.226 TFLOPS,806.4 GFLOPS (1:4),6 GB,https://www.techpowerup.com/gpu-specs/firepro-s9000.c1879
+AMD,AMD FirePro S9010,2012,,25.60 GPixel/s,89.60 GTexel/s,,2.867 TFLOPS,716.8 GFLOPS (1:4),3 GB,https://www.techpowerup.com/gpu-specs/firepro-s9010.c3237
+AMD,AMD FirePro V3900,2012,,5.200 GPixel/s,15.60 GTexel/s,,624.0 GFLOPS,,1024 MB,https://www.techpowerup.com/gpu-specs/firepro-v3900.c579
+AMD,AMD FirePro W4000,2012,,26.40 GPixel/s,39.60 GTexel/s,,"1,267.2 GFLOPS",79.20 GFLOPS (1:16),2 GB,https://www.techpowerup.com/gpu-specs/firepro-w4000.c1880
+AMD,AMD FirePro W5000,2012,599,26.40 GPixel/s,39.60 GTexel/s,,"1,267.2 GFLOPS",79.20 GFLOPS (1:16),2 GB,https://www.techpowerup.com/gpu-specs/firepro-w5000.c588
+AMD,AMD FirePro W600,2012,599,12.00 GPixel/s,24.00 GTexel/s,,768.0 GFLOPS,48.00 GFLOPS (1:16),2 GB,https://www.techpowerup.com/gpu-specs/firepro-w600.c562
+AMD,AMD FirePro W7000,2012,899,30.40 GPixel/s,76.00 GTexel/s,,2.432 TFLOPS,152.0 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/firepro-w7000.c587
+AMD,AMD FirePro W8000,2012,1599,28.80 GPixel/s,100.8 GTexel/s,,3.226 TFLOPS,806.4 GFLOPS (1:4),4 GB,https://www.techpowerup.com/gpu-specs/firepro-w8000.c586
+AMD,AMD FirePro W9000,2012,3999,31.20 GPixel/s,124.8 GTexel/s,,3.994 TFLOPS,998.4 GFLOPS (1:4),6 GB,https://www.techpowerup.com/gpu-specs/firepro-w9000.c585
+AMD,AMD FirePro W9000 X2,,3599,30.40 GPixel/s,106.4 GTexel/s,,3.405 TFLOPS,851.2 GFLOPS (1:4),3 GB,https://www.techpowerup.com/gpu-specs/firepro-w9000-x2.c3956
+AMD,AMD FirePro R5000,2013,1099,26.40 GPixel/s,39.60 GTexel/s,,"1,267.2 GFLOPS",79.20 GFLOPS (1:16),2 GB,https://www.techpowerup.com/gpu-specs/firepro-r5000.c2037
+AMD,AMD FirePro W5000 DVI,2013,599,26.40 GPixel/s,39.60 GTexel/s,,"1,267.2 GFLOPS",79.20 GFLOPS (1:16),2 GB,https://www.techpowerup.com/gpu-specs/firepro-w5000-dvi.c2036
+AMD,AMD Radeon Sky 500,2013,,30.40 GPixel/s,76.00 GTexel/s,,2.432 TFLOPS,152.0 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/radeon-sky-500.c2276
+AMD,AMD Radeon Sky 700,2013,,28.80 GPixel/s,100.8 GTexel/s,,3.226 TFLOPS,806.4 GFLOPS (1:4),6 GB,https://www.techpowerup.com/gpu-specs/radeon-sky-700.c2279
+AMD,AMD Radeon Sky 900,2013,,30.40 GPixel/s,106.4 GTexel/s,,3.405 TFLOPS,851.2 GFLOPS (1:4),3 GB,https://www.techpowerup.com/gpu-specs/radeon-sky-900.c2278
+AMD,AMD FirePro D300,2014,,27.20 GPixel/s,68.00 GTexel/s,,2.176 TFLOPS,136.0 GFLOPS (1:16),2 GB,https://www.techpowerup.com/gpu-specs/firepro-d300.c2557
+AMD,AMD FirePro D500,2014,,23.20 GPixel/s,69.60 GTexel/s,,2.227 TFLOPS,556.8 GFLOPS (1:4),3 GB,https://www.techpowerup.com/gpu-specs/firepro-d500.c2556
+AMD,AMD FirePro D700,2014,,27.20 GPixel/s,108.8 GTexel/s,,3.482 TFLOPS,870.4 GFLOPS (1:4),6 GB,https://www.techpowerup.com/gpu-specs/firepro-d700.c2555
+AMD,AMD FirePro S10000 Passive 12GB,2014,3599,30.40 GPixel/s,106.4 GTexel/s,,3.405 TFLOPS,851.2 GFLOPS (1:4),6 GB,https://www.techpowerup.com/gpu-specs/firepro-s10000-passive-12gb.c2522
+AMD,AMD FirePro S9050,2014,,28.80 GPixel/s,100.8 GTexel/s,,3.226 TFLOPS,806.4 GFLOPS (1:4),12 GB,https://www.techpowerup.com/gpu-specs/firepro-s9050.c2607
+AMD,AMD FirePro S9100,2014,3999,52.74 GPixel/s,131.8 GTexel/s,,4.219 TFLOPS,2.109 TFLOPS (1:2),12 GB,https://www.techpowerup.com/gpu-specs/firepro-s9100.c2636
+AMD,AMD FirePro S9150,2014,3999,57.60 GPixel/s,158.4 GTexel/s,,5.069 TFLOPS,2.534 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/firepro-s9150.c2608
+AMD,AMD FirePro W2100,2014,139,5.440 GPixel/s,13.60 GTexel/s,,435.2 GFLOPS,27.20 GFLOPS (1:16),2 GB,https://www.techpowerup.com/gpu-specs/firepro-w2100.c2612
+AMD,AMD FirePro W4100,2014,179,10.08 GPixel/s,20.16 GTexel/s,,645.1 GFLOPS,40.32 GFLOPS (1:16),2 GB,https://www.techpowerup.com/gpu-specs/firepro-w4100.c2611
+AMD,AMD FirePro W5100,2014,399,14.88 GPixel/s,44.64 GTexel/s,,"1,428.5 GFLOPS",89.28 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/firepro-w5100.c2585
+AMD,AMD FirePro W7100,2014,799,29.44 GPixel/s,103.0 GTexel/s,3.297 TFLOPS (1:1),3.297 TFLOPS,206.1 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/firepro-w7100.c2610
+AMD,AMD FirePro W8100,2014,1249,52.74 GPixel/s,131.8 GTexel/s,,4.219 TFLOPS,2.109 TFLOPS (1:2),8 GB,https://www.techpowerup.com/gpu-specs/firepro-w8100.c2588
+AMD,AMD FirePro W9100,2014,,59.52 GPixel/s,163.7 GTexel/s,,5.238 TFLOPS,2.619 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/firepro-w9100.c2562
+AMD,AMD FirePro S9170,2015,,59.52 GPixel/s,163.7 GTexel/s,,5.238 TFLOPS,2.619 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/firepro-s9170.c2744
+AMD,AMD FirePro W4300,2015,,14.88 GPixel/s,44.64 GTexel/s,,"1,428.5 GFLOPS",89.28 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/firepro-w4300.c2781
+AMD,AMD FirePro S7150,2016,2399,29.44 GPixel/s,117.8 GTexel/s,7.537 TFLOPS (2:1),3.768 TFLOPS,235.5 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/firepro-s7150.c2751
+AMD,AMD FirePro S7150 x2,2016,3999,29.44 GPixel/s,103.0 GTexel/s,3.297 TFLOPS (1:1),3.297 TFLOPS,206.1 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/firepro-s7150-x2.c2812
+AMD,AMD FirePro S9300 X2,2016,5999,62.40 GPixel/s,249.6 GTexel/s,,7.987 TFLOPS,499.2 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/firepro-s9300-x2.c2833
+AMD,AMD Radeon Instinct MI6,2016,,39.46 GPixel/s,177.6 GTexel/s,5.682 TFLOPS (1:1),5.682 TFLOPS,355.1 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi6.c2927
+AMD,AMD Radeon Instinct MI8,2016,,64.00 GPixel/s,256.0 GTexel/s,8.192 TFLOPS (1:1),8.192 TFLOPS,512.0 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi8.c2928
+AMD,AMD Radeon Pro Duo,2016,1499,64.00 GPixel/s,256.0 GTexel/s,8.192 TFLOPS (1:1),8.192 TFLOPS,512.0 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-duo.c2828
+AMD,AMD Radeon Pro SSG,2016,9999,67.20 GPixel/s,268.8 GTexel/s,17.20 TFLOPS (2:1),8.602 TFLOPS,537.6 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-ssg.c3978
+AMD,AMD Radeon Pro V5300X,,,19.22 GPixel/s,76.86 GTexel/s,,2.460 TFLOPS,153.7 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v5300x.c3057
+AMD,AMD Radeon Pro V7300X,,,39.78 GPixel/s,179.0 GTexel/s,,5.728 TFLOPS,358.0 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v7300x.c3058
+AMD,AMD Radeon Pro V7350X2,,,39.78 GPixel/s,179.0 GTexel/s,,5.728 TFLOPS,358.0 GFLOPS (1:16),16 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v7350x2.c3059
+AMD,AMD Radeon Pro WX 4100,2016,399,19.22 GPixel/s,76.86 GTexel/s,2.460 TFLOPS (1:1),2.460 TFLOPS,153.7 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-wx-4100.c2874
+AMD,AMD Radeon Pro WX 5100,2016,499,34.75 GPixel/s,121.6 GTexel/s,3.892 TFLOPS (1:1),3.892 TFLOPS,243.3 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-wx-5100.c2873
+AMD,AMD Radeon Pro WX 7100,2016,799,39.78 GPixel/s,179.0 GTexel/s,5.728 TFLOPS (1:1),5.728 TFLOPS,358.0 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-wx-7100.c2872
+AMD,AMD P30PH,,,38.59 GPixel/s,154.4 GTexel/s,4.940 TFLOPS (1:1),4.940 TFLOPS,308.7 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/p30ph.c3984
+AMD,AMD Radeon Instinct MI25,2017,,96.00 GPixel/s,384.0 GTexel/s,24.58 TFLOPS (2:1),12.29 TFLOPS,768.0 GFLOPS (1:16),16 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi25.c2983
+AMD,AMD Radeon Pro Duo Polaris,2017,999,39.78 GPixel/s,179.0 GTexel/s,5.728 TFLOPS (1:1),5.728 TFLOPS,358.0 GFLOPS (1:16),16 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-duo-polaris.c2953
+AMD,AMD Radeon Pro SSG,2017,6999,96.00 GPixel/s,384.0 GTexel/s,24.58 TFLOPS (2:1),12.29 TFLOPS,768.0 GFLOPS (1:16),16 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-ssg.c2998
+AMD,AMD Radeon Pro V320,2017,,96.00 GPixel/s,336.0 GTexel/s,21.50 TFLOPS (2:1),10.75 TFLOPS,672.0 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v320.c3270
+AMD,AMD Radeon Pro WX 2100,2017,149,19.50 GPixel/s,39.01 GTexel/s,"1,248.3 GFLOPS (1:1)","1,248.3 GFLOPS",78.02 GFLOPS (1:16),2 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-wx-2100.c2979
+AMD,AMD Radeon Pro WX 3100,2017,199,19.50 GPixel/s,39.01 GTexel/s,"1,248.3 GFLOPS (1:1)","1,248.3 GFLOPS",78.02 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-wx-3100.c2978
+AMD,AMD Radeon Pro WX 8100,2017,,96.00 GPixel/s,336.0 GTexel/s,21.50 TFLOPS (2:1),10.75 TFLOPS,672.0 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-wx-8100.c3271
+AMD,AMD Radeon Pro WX 9100,2017,1599,96.00 GPixel/s,384.0 GTexel/s,24.58 TFLOPS (2:1),12.29 TFLOPS,768.0 GFLOPS (1:16),16 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-wx-9100.c2989
+AMD,AMD Radeon Vega Frontier Edition,2017,999,102.4 GPixel/s,409.6 GTexel/s,26.21 TFLOPS (2:1),13.11 TFLOPS,819.2 GFLOPS (1:16),16 GB,https://www.techpowerup.com/gpu-specs/radeon-vega-frontier-edition.c2958
+AMD,AMD Radeon Vega Frontier Edition Watercooled,2017,1489,102.4 GPixel/s,409.6 GTexel/s,26.21 TFLOPS (2:1),13.11 TFLOPS,819.2 GFLOPS (1:16),16 GB,https://www.techpowerup.com/gpu-specs/radeon-vega-frontier-edition-watercooled.c2982
+AMD,AMD Radeon Instinct MI50,2018,,111.7 GPixel/s,419.0 GTexel/s,26.82 TFLOPS (2:1),13.41 TFLOPS,6.705 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi50.c3335
+AMD,AMD Radeon Instinct MI60,2018,,115.2 GPixel/s,460.8 GTexel/s,29.49 TFLOPS (2:1),14.75 TFLOPS,7.373 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi60.c3233
+AMD,AMD Radeon Pro V340 16 GB,2018,,96.00 GPixel/s,336.0 GTexel/s,21.50 TFLOPS (2:1),10.75 TFLOPS,672.0 GFLOPS (1:16),16 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v340-16-gb.c3267
+AMD,AMD Radeon Pro V340 8 GB,2018,,96.00 GPixel/s,336.0 GTexel/s,21.50 TFLOPS (2:1),10.75 TFLOPS,672.0 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v340-8-gb.c3977
+AMD,AMD Radeon Pro V420,,,108.8 GPixel/s,435.2 GTexel/s,27.85 TFLOPS (2:1),13.93 TFLOPS,6.963 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v420.c3955
+AMD,AMD Radeon Pro WX 8200,2018,999,96.00 GPixel/s,336.0 GTexel/s,21.50 TFLOPS (2:1),10.75 TFLOPS,672.0 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-wx-8200.c3303
+AMD,AMD Radeon Pro Vega II,2019,2199,110.1 GPixel/s,440.3 GTexel/s,28.18 TFLOPS (2:1),14.09 TFLOPS,7.045 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-vega-ii.c3426
+AMD,AMD Radeon Pro Vega II Duo,2019,4399,110.1 GPixel/s,440.3 GTexel/s,28.18 TFLOPS (2:1),14.09 TFLOPS,7.045 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-vega-ii-duo.c3268
+AMD,AMD Radeon Pro W5500X,2019,599,56.22 GPixel/s,168.7 GTexel/s,10.80 TFLOPS (2:1),5.398 TFLOPS,337.3 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w5500x.c4105
+AMD,AMD Radeon Pro W5700,2019,799,120.3 GPixel/s,270.7 GTexel/s,17.33 TFLOPS (2:1),8.663 TFLOPS,541.4 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w5700.c3466
+AMD,AMD Radeon Pro W5700X,2019,999,130.6 GPixel/s,326.4 GTexel/s,20.89 TFLOPS (2:1),10.44 TFLOPS,652.8 GFLOPS (1:16),16 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w5700x.c3583
+AMD,AMD Radeon Pro WX 3200,2019,199,20.72 GPixel/s,41.44 GTexel/s,1.658 TFLOPS (1:1),1.658 TFLOPS,103.6 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-wx-3200.c3412
+AMD,AMD Radeon Instinct MI100,2020,,96.13 GPixel/s,721.0 GTexel/s,184.6 TFLOPS (8:1),23.07 TFLOPS,11.54 TFLOPS (1:2),32 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi100.c3496
+AMD,AMD Radeon Pro 5300,2020,,52.80 GPixel/s,132.0 GTexel/s,8.448 TFLOPS (2:1),4.224 TFLOPS,264.0 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-5300.c3665
+AMD,AMD Radeon Pro 5500 XT,2020,,56.22 GPixel/s,168.7 GTexel/s,10.80 TFLOPS (2:1),5.398 TFLOPS,337.3 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-5500-xt.c3664
+AMD,AMD Radeon Pro 5700,2020,,86.40 GPixel/s,194.4 GTexel/s,12.44 TFLOPS (2:1),6.221 TFLOPS,388.8 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-5700.c3663
+AMD,AMD Radeon Pro 5700 XT,2020,,95.94 GPixel/s,239.8 GTexel/s,15.35 TFLOPS (2:1),7.675 TFLOPS,479.7 GFLOPS (1:16),16 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-5700-xt.c3662
+AMD,AMD Radeon Pro V520,2020,,102.4 GPixel/s,230.4 GTexel/s,14.75 TFLOPS (2:1),7.373 TFLOPS,460.8 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v520.c3755
+AMD,AMD Radeon Pro V540,,,102.4 GPixel/s,230.4 GTexel/s,14.75 TFLOPS (2:1),7.373 TFLOPS,460.8 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v540.c4133
+AMD,AMD Radeon Pro VII,2020,1899,108.8 GPixel/s,408.0 GTexel/s,26.11 TFLOPS (2:1),13.06 TFLOPS,6.528 TFLOPS (1:2),16 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-vii.c3575
+AMD,AMD Radeon Pro W5500,2020,399,59.36 GPixel/s,163.2 GTexel/s,10.45 TFLOPS (2:1),5.224 TFLOPS,326.5 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w5500.c3479
+AMD,AMD Radeon Instinct MI200,2021,,0 MPixel/s,707.2 GTexel/s,181.0 TFLOPS (8:1),22.63 TFLOPS,22.63 TFLOPS (1:1),64 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi200.c4077
+AMD,AMD Radeon Instinct MI210,2021,,0 MPixel/s,707.2 GTexel/s,181.0 TFLOPS (8:1),22.63 TFLOPS,22.63 TFLOPS (1:1),64 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi210.c3857
+AMD,AMD Radeon Instinct MI250,2021,,0 MPixel/s,"1,414.4 GTexel/s",362.1 TFLOPS (8:1),45.26 TFLOPS,45.26 TFLOPS (1:1),128 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi250.c3847
+AMD,AMD Radeon Instinct MI250X,2021,,0 MPixel/s,"1,496.0 GTexel/s",383.0 TFLOPS (8:1),47.87 TFLOPS,47.87 TFLOPS (1:1),128 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi250x.c3837
+AMD,AMD Radeon PRO V620,2021,,281.6 GPixel/s,633.6 GTexel/s,40.55 TFLOPS (2:1),20.28 TFLOPS,"1,267.2 GFLOPS (1:16)",32 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v620.c3846
+AMD,AMD Radeon PRO W6600,2021,649,165.1 GPixel/s,289.0 GTexel/s,18.49 TFLOPS (2:1),9.247 TFLOPS,577.9 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w6600.c3818
+AMD,AMD Radeon PRO W6800,2021,2249,222.7 GPixel/s,556.8 GTexel/s,35.64 TFLOPS (2:1),17.82 TFLOPS,"1,113.6 GFLOPS (1:16)",32 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w6800.c3809
+AMD,AMD Radeon Pro W6600X,2021,699,158.7 GPixel/s,317.3 GTexel/s,20.31 TFLOPS (2:1),10.15 TFLOPS,634.6 GFLOPS (1:16),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w6600x.c4104
+AMD,AMD Radeon Pro W6800X,2021,2799,200.4 GPixel/s,500.9 GTexel/s,32.06 TFLOPS (2:1),16.03 TFLOPS,"1,001.8 GFLOPS (1:16)",32 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w6800x.c3826
+AMD,AMD Radeon Pro W6800X Duo,2021,4999,188.8 GPixel/s,472.1 GTexel/s,30.21 TFLOPS (2:1),15.11 TFLOPS,944.2 GFLOPS (1:16),32 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w6800x-duo.c3824
+AMD,AMD Radeon Pro W6900X,2021,5999,277.9 GPixel/s,694.7 GTexel/s,44.46 TFLOPS (2:1),22.23 TFLOPS,"1,389.4 GFLOPS (1:16)",32 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w6900x.c3825
+AMD,AMD Radeon PRO W6300,2022,,65.28 GPixel/s,97.92 GTexel/s,6.267 TFLOPS (2:1),3.133 TFLOPS,195.8 GFLOPS (1:16),2 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w6300.c3982
+AMD,AMD Radeon PRO W6400,2022,,74.27 GPixel/s,111.4 GTexel/s,7.130 TFLOPS (2:1),3.565 TFLOPS,222.8 GFLOPS (1:16),4 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w6400.c3873
+AMD,AMD Radeon Instinct MI300,2023,,0 MPixel/s,"1,496.0 GTexel/s",383.0 TFLOPS (8:1),47.87 TFLOPS,47.87 TFLOPS (1:1),128 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi300.c4019
+AMD,AMD Radeon Instinct MI300A,2023,,0 MPixel/s,"2,553.6 GTexel/s",653.7 TFLOPS (8:1),81.72 TFLOPS,81.72 TFLOPS (1:1),192 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi300a.c4296
+AMD,AMD Radeon Instinct MI300X,2023,,0 MPixel/s,"2,553.6 GTexel/s",653.7 TFLOPS (8:1),81.72 TFLOPS,81.72 TFLOPS (1:1),192 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi300x.c4179
+AMD,AMD Radeon Instinct MI308X,2023,,0 MPixel/s,"2,553.6 GTexel/s",653.7 TFLOPS (8:1),81.72 TFLOPS,81.72 TFLOPS (1:1),192 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi308x.c4295
+AMD,AMD Radeon PRO W7500,2023,429,108.8 GPixel/s,190.4 GTexel/s,24.37 TFLOPS (2:1),12.19 TFLOPS,380.8 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w7500.c4170
+AMD,AMD Radeon PRO W7600,2023,599,156.2 GPixel/s,312.3 GTexel/s,39.98 TFLOPS (2:1),19.99 TFLOPS,624.6 GFLOPS (1:32),8 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w7600.c4169
+AMD,AMD Radeon PRO W7700,2023,999,249.6 GPixel/s,499.2 GTexel/s,63.90 TFLOPS (2:1),31.95 TFLOPS,998.4 GFLOPS (1:32),16 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w7700.c4184
+AMD,AMD Radeon PRO W7800,2023,2499,323.2 GPixel/s,707.0 GTexel/s,90.50 TFLOPS (2:1),45.25 TFLOPS,"1,414.0 GFLOPS (1:32)",32 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w7800.c4148
+AMD,AMD Radeon PRO W7800 48 GB,2023,2499,323.2 GPixel/s,707.0 GTexel/s,90.50 TFLOPS (2:1),45.25 TFLOPS,"1,414.0 GFLOPS (1:32)",48 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w7800-48-gb.c4252
+AMD,AMD Radeon PRO W7900,2023,3999,479.0 GPixel/s,958.1 GTexel/s,122.6 TFLOPS (2:1),61.32 TFLOPS,1.916 TFLOPS (1:32),48 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-w7900.c4147
+AMD,AMD Radeon Instinct MI325X,2024,229192.14,0 MPixel/s,"2,553.6 GTexel/s",653.7 TFLOPS (8:1),81.72 TFLOPS,81.72 TFLOPS (1:1),288 GB,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi325x.c4231
+AMD,AMD Radeon PRO V710,2024,,192.0 GPixel/s,432.0 GTexel/s,55.30 TFLOPS (2:1),27.65 TFLOPS,864.0 GFLOPS (1:32),28 GB,https://www.techpowerup.com/gpu-specs/radeon-pro-v710.c4234
+AMD,AMD Radeon AI PRO R9700,2025,8200,373.8 GPixel/s,747.5 GTexel/s,95.68 TFLOPS (2:1),47.84 TFLOPS,"1,495.0 GFLOPS (1:32)",32 GB,https://www.techpowerup.com/gpu-specs/radeon-ai-pro-r9700.c4290

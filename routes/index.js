@@ -1,0 +1,344 @@
+var express = require('express');
+var router = express.Router();
+const { getAllGPUs, getGPUsByBrand, getGPUsByYearRange, searchGPUs } = require('../database/db');
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.sendFile('index.html', { root: './public' });
+});
+
+/* GET charts page */
+router.get('/charts', function(req, res, next) {
+  res.sendFile('charts.html', { root: './public' });
+});
+
+/* GET AMD charts page */
+router.get('/amd-charts', function(req, res, next) {
+  res.sendFile('amd-charts.html', { root: './public' });
+});
+
+/* GET compare charts page */
+router.get('/compare-charts', function(req, res, next) {
+  res.sendFile('compare-charts.html', { root: './public' });
+});
+
+/* GET chart data API */
+router.get('/api/chart-data', function(req, res, next) {
+  getAllGPUs((err, gpus) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else {
+      // 篩選NVIDIA GPU和有價格和年份的資料
+      const validGPUs = gpus.filter(gpu => 
+        gpu.launch_price && 
+        gpu.launch_price > 0 && 
+        gpu.release_year && 
+        gpu.release_year > 2000 &&
+        gpu.brand && gpu.brand.toLowerCase().includes('nvidia')
+      );
+
+      // 按年份分組並計算平均值
+      const yearlyData = {};
+      
+      validGPUs.forEach(gpu => {
+        const year = gpu.release_year;
+        const price = parseFloat(gpu.launch_price);
+        
+        if (!yearlyData[year]) {
+          yearlyData[year] = {
+            year: year,
+            gpus: [],
+            totalPrice: 0,
+            count: 0
+          };
+        }
+        
+        yearlyData[year].gpus.push(gpu);
+        yearlyData[year].totalPrice += price;
+        yearlyData[year].count++;
+      });
+
+      // 計算每年的平均性價比
+      const chartData = Object.values(yearlyData).map(yearData => {
+        const avgPrice = yearData.totalPrice / yearData.count;
+        
+        // 計算平均性能參數
+        let avgPixelRate = 0, avgTextureRate = 0, avgFP32 = 0, avgMemorySize = 0;
+        let pixelCount = 0, textureCount = 0, fp32Count = 0, memoryCount = 0;
+        
+        yearData.gpus.forEach(gpu => {
+          // 解析像素填充率
+          if (gpu.pixel_rate && gpu.pixel_rate !== 'N/A') {
+            const pixelValue = parseFloat(gpu.pixel_rate.replace(/[^\d.]/g, ''));
+            if (!isNaN(pixelValue)) {
+              avgPixelRate += pixelValue;
+              pixelCount++;
+            }
+          }
+          
+          // 解析紋理填充率
+          if (gpu.texture_rate && gpu.texture_rate !== 'N/A') {
+            const textureValue = parseFloat(gpu.texture_rate.replace(/[^\d.]/g, ''));
+            if (!isNaN(textureValue)) {
+              avgTextureRate += textureValue;
+              textureCount++;
+            }
+          }
+          
+          // 解析FP32性能
+          if (gpu.fp32 && gpu.fp32 !== 'N/A') {
+            // 提取數字部分
+            const fp32Value = parseFloat(gpu.fp32.replace(/[^\d.]/g, ''));
+            if (!isNaN(fp32Value)) {
+              // 檢查單位是 TFLOPS 還是 GFLOPS
+              const isTFLOPS = gpu.fp32.toLowerCase().includes('tflops');
+              // 統一轉換為GFLOPS進行計算
+              const valueInGFLOPS = isTFLOPS ? fp32Value * 1000 : fp32Value;
+              avgFP32 += valueInGFLOPS;
+              fp32Count++;
+            }
+          }
+          
+          // 解析記憶體大小
+          if (gpu.memory_size && gpu.memory_size !== 'N/A') {
+            // 提取數字部分
+            const memoryValue = parseFloat(gpu.memory_size.replace(/[^\d.]/g, ''));
+            if (!isNaN(memoryValue)) {
+              // 檢查單位是 GB 還是 MB
+              const isGB = gpu.memory_size.toLowerCase().includes('gb');
+              // GB轉換為MB進行統一計算
+              const valueInMB = isGB ? memoryValue * 1024 : memoryValue;
+              avgMemorySize += valueInMB;
+              memoryCount++;
+            }
+          }
+        });
+        
+        return {
+          year: yearData.year,
+          avgPrice: Math.round(avgPrice),
+          gpuCount: yearData.count,
+          // 計算每美元的性能比率
+          pixelPerDollar: pixelCount > 0 ? (avgPixelRate / pixelCount) / avgPrice : 0,
+          texturePerDollar: textureCount > 0 ? (avgTextureRate / textureCount) / avgPrice : 0,
+          fp32PerDollar: fp32Count > 0 ? (avgFP32 / fp32Count) / avgPrice : 0,
+          memoryPerDollar: memoryCount > 0 ? (avgMemorySize / memoryCount) / avgPrice : 0,
+          // 原始平均值
+          avgPixelRate: pixelCount > 0 ? avgPixelRate / pixelCount : 0,
+          avgTextureRate: textureCount > 0 ? avgTextureRate / textureCount : 0,
+          avgFP32: fp32Count > 0 ? avgFP32 / fp32Count : 0,
+          avgMemorySize: memoryCount > 0 ? avgMemorySize / memoryCount : 0
+        };
+      }).sort((a, b) => a.year - b.year);
+
+      res.json(chartData);
+    }
+  });
+});
+
+/* GET AMD chart data API */
+router.get('/api/amd-chart-data', function(req, res, next) {
+  getAllGPUs((err, gpus) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else {
+      // 篩選AMD GPU和有價格和年份的資料
+      const validGPUs = gpus.filter(gpu => 
+        gpu.launch_price && 
+        gpu.launch_price > 0 && 
+        gpu.release_year && 
+        gpu.release_year > 2000 &&
+        gpu.brand && gpu.brand.toLowerCase().includes('amd')
+      );
+
+      // 按年份分組並計算平均值
+      const yearlyData = {};
+      
+      validGPUs.forEach(gpu => {
+        const year = gpu.release_year;
+        const price = parseFloat(gpu.launch_price);
+        
+        if (!yearlyData[year]) {
+          yearlyData[year] = {
+            year: year,
+            gpus: [],
+            totalPrice: 0,
+            count: 0
+          };
+        }
+        
+        yearlyData[year].gpus.push(gpu);
+        yearlyData[year].totalPrice += price;
+        yearlyData[year].count++;
+      });
+
+      // 計算每年的平均性價比
+      const chartData = Object.values(yearlyData).map(yearData => {
+        const avgPrice = yearData.totalPrice / yearData.count;
+        
+        // 計算平均性能參數
+        let avgPixelRate = 0, avgTextureRate = 0, avgFP32 = 0, avgMemorySize = 0;
+        let pixelCount = 0, textureCount = 0, fp32Count = 0, memoryCount = 0;
+        
+        yearData.gpus.forEach(gpu => {
+          // 解析像素填充率
+          if (gpu.pixel_rate && gpu.pixel_rate !== 'N/A') {
+            const pixelValue = parseFloat(gpu.pixel_rate.replace(/[^\d.]/g, ''));
+            if (!isNaN(pixelValue)) {
+              avgPixelRate += pixelValue;
+              pixelCount++;
+            }
+          }
+          
+          // 解析紋理填充率
+          if (gpu.texture_rate && gpu.texture_rate !== 'N/A') {
+            const textureValue = parseFloat(gpu.texture_rate.replace(/[^\d.]/g, ''));
+            if (!isNaN(textureValue)) {
+              avgTextureRate += textureValue;
+              textureCount++;
+            }
+          }
+          
+          // 解析FP32性能
+          if (gpu.fp32 && gpu.fp32 !== 'N/A') {
+            // 提取數字部分
+            const fp32Value = parseFloat(gpu.fp32.replace(/[^\d.]/g, ''));
+            if (!isNaN(fp32Value)) {
+              // 檢查單位是 TFLOPS 還是 GFLOPS
+              const isTFLOPS = gpu.fp32.toLowerCase().includes('tflops');
+              // 統一轉換為GFLOPS進行計算
+              const valueInGFLOPS = isTFLOPS ? fp32Value * 1000 : fp32Value;
+              avgFP32 += valueInGFLOPS;
+              fp32Count++;
+            }
+          }
+          
+          // 解析記憶體大小
+          if (gpu.memory_size && gpu.memory_size !== 'N/A') {
+            // 提取數字部分
+            const memoryValue = parseFloat(gpu.memory_size.replace(/[^\d.]/g, ''));
+            if (!isNaN(memoryValue)) {
+              // 檢查單位是 GB 還是 MB
+              const isGB = gpu.memory_size.toLowerCase().includes('gb');
+              // GB轉換為MB進行統一計算
+              const valueInMB = isGB ? memoryValue * 1024 : memoryValue;
+              avgMemorySize += valueInMB;
+              memoryCount++;
+            }
+          }
+        });
+        
+        return {
+          year: yearData.year,
+          avgPrice: Math.round(avgPrice),
+          gpuCount: yearData.count,
+          // 計算每美元的性能比率
+          pixelPerDollar: pixelCount > 0 ? (avgPixelRate / pixelCount) / avgPrice : 0,
+          texturePerDollar: textureCount > 0 ? (avgTextureRate / textureCount) / avgPrice : 0,
+          fp32PerDollar: fp32Count > 0 ? (avgFP32 / fp32Count) / avgPrice : 0,
+          memoryPerDollar: memoryCount > 0 ? (avgMemorySize / memoryCount) / avgPrice : 0,
+          // 原始平均值
+          avgPixelRate: pixelCount > 0 ? avgPixelRate / pixelCount : 0,
+          avgTextureRate: textureCount > 0 ? avgTextureRate / textureCount : 0,
+          avgFP32: fp32Count > 0 ? avgFP32 / fp32Count : 0,
+          avgMemorySize: memoryCount > 0 ? avgMemorySize / memoryCount : 0
+        };
+      }).sort((a, b) => a.year - b.year);
+
+      res.json(chartData);
+    }
+  });
+});
+
+/* GET all GPUs */
+router.get('/api/gpus', function(req, res, next) {
+  getAllGPUs((err, gpus) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else {
+      res.json(gpus);
+    }
+  });
+});
+
+/* GET GPUs by brand */
+router.get('/api/gpus/brand/:brand', function(req, res, next) {
+  const brand = req.params.brand;
+  getGPUsByBrand(brand, (err, gpus) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else {
+      res.json(gpus);
+    }
+  });
+});
+
+/* GET GPUs by year range */
+router.get('/api/gpus/year/:startYear/:endYear', function(req, res, next) {
+  const startYear = parseInt(req.params.startYear);
+  const endYear = parseInt(req.params.endYear);
+  getGPUsByYearRange(startYear, endYear, (err, gpus) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else {
+      res.json(gpus);
+    }
+  });
+});
+
+/* GET search GPUs */
+router.get('/api/gpus/search/:term', function(req, res, next) {
+  const searchTerm = req.params.term;
+  searchGPUs(searchTerm, (err, gpus) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else {
+      res.json(gpus);
+    }
+  });
+});
+
+/* GET stats API */
+router.get('/api/stats', function(req, res, next) {
+  getAllGPUs((err, gpus) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else {
+      // 計算統計數據
+      const totalGPUs = gpus.length;
+      
+      // 計算品牌數量
+      const brands = new Set();
+      gpus.forEach(gpu => {
+        if (gpu.name) {
+          const brand = gpu.name.split(' ')[0]; // 取第一個詞作為品牌
+          brands.add(brand);
+        }
+      });
+      const brandCount = brands.size;
+      
+      // 計算年份範圍
+      const years = gpus
+        .filter(gpu => gpu.release_year && gpu.release_year > 2000)
+        .map(gpu => gpu.release_year);
+      const yearRange = years.length > 0 ? `${Math.min(...years)}-${Math.max(...years)}` : '-';
+      
+      // 計算平均價格
+      const validPrices = gpus
+        .filter(gpu => gpu.launch_price && gpu.launch_price > 0)
+        .map(gpu => parseFloat(gpu.launch_price));
+      const avgPrice = validPrices.length > 0 
+        ? Math.round(validPrices.reduce((sum, price) => sum + price, 0) / validPrices.length)
+        : 0;
+      
+      res.json({
+        totalGPUs,
+        brandCount,
+        yearRange,
+        avgPrice
+      });
+    }
+  });
+});
+
+module.exports = router;
