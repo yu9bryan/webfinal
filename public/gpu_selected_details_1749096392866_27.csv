@@ -1,0 +1,2 @@
+﻿brand,name,release_year,launch_price,pixel_rate,texture_rate,fp16,fp32,fp64,memory_size,source_url
+NVIDIA,NVIDIA GeForce RTX 5090,2025,1999,423.6 GPixel/s,"1,636.8 GTexel/s",104.8 TFLOPS (1:1),104.8 TFLOPS,1.637 TFLOPS (1:64),32 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216

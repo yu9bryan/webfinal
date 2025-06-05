@@ -1,0 +1,185 @@
+// 初始化頁面事件
+document.addEventListener('DOMContentLoaded', function() {
+  // 搜尋表單處理
+  document.getEleme}
+
+// 抓取已選擇 GPU
+async function fetchSelectedGPUs(e) {
+  e.preventDefault();
+  
+  const keyword = document.getElementById('fetch-keyword').value.trim();
+  const resultDiv = document.getElementById('result');
+  
+  // 獲取所有選中的 checkbox
+  const checked = document.querySelectorAll('.gpu-checkbox:checked');
+  const selectedIndices = Array.from(checked).map(checkbox => parseInt(checkbox.value));
+  
+  if (selectedIndices.length === 0) {
+    resultDiv.innerHTML = '<span class="error">請至少選擇一個 GPU</span>';
+    return;
+  }
+  
+  resultDiv.innerHTML = '<span class="loading">正在抓取已選擇 GPU 資料，請稍候...</span>';form').addEventListener('submit', searchGPUs);
+  
+  // 抓取表單處理
+  document.getElementById('fetch-form').addEventListener('submit', fetchSelectedGPUs);
+  
+  // 全選與取消全選按鈕
+  document.getElementById('select-all').addEventListener('click', function() {
+    const checkboxes = document.querySelectorAll('.gpu-checkbox');
+    checkboxes.forEach(checkbox => checkbox.checked = true);
+    updateSelectionCount();
+  });
+  
+  document.getElementById('select-none').addEventListener('click', function() {
+    const checkboxes = document.querySelectorAll('.gpu-checkbox');
+    checkboxes.forEach(checkbox => checkbox.checked = false);
+    updateSelectionCount();
+  });
+});
+
+// 搜尋 GPU
+async function searchGPUs(e) {
+  e.preventDefault();
+  const keyword = document.getElementById('keyword').value.trim();
+  const resultDiv = document.getElementById('result');
+  const searchResultDiv = document.getElementById('search-result');
+  
+  if (!keyword) return;
+  
+  // 隱藏搜尋結果區塊，顯示加載中
+  searchResultDiv.classList.add('hidden');
+  resultDiv.innerHTML = '<span class="loading">搜尋中，請稍候...</span>';
+  
+  try {
+    const res = await fetch('/api/gpu-search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ keyword })
+    });
+    
+    const data = await res.json();
+    
+    if (data.error) {
+      let debugInfo = '';
+      if (data.debug) {
+        debugInfo = `<details><summary>除錯資訊</summary><pre>${JSON.stringify(data.debug, null, 2)}</pre></details>`;
+      }
+      resultDiv.innerHTML = `<span class="error">${data.error}</span>` + debugInfo;
+      return;
+    }
+    
+    // 處理搜尋結果
+    if (data.results && data.results.length > 0) {
+      // 清空結果區
+      resultDiv.innerHTML = '';
+      
+      // 顯示搜尋結果區塊
+      searchResultDiv.classList.remove('hidden');
+      
+      // 產生 GPU 列表
+      const gpuListDiv = document.getElementById('gpu-list');
+      gpuListDiv.innerHTML = '';
+      
+      data.results.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'gpu-item';
+        div.innerHTML = `
+          <label>
+            <input type="checkbox" class="gpu-checkbox" data-index="${item.index}" value="${item.index}">
+            ${item.name} 
+            <a href="${item.url}" target="_blank">[查看]</a>
+          </label>
+        `;
+        gpuListDiv.appendChild(div);
+        
+        // 加入計數器處理程序
+        div.querySelector('input').addEventListener('change', updateSelectionCount);
+      });
+      
+      // 儲存關鍵字供後續使用
+      document.getElementById('fetch-keyword').value = keyword;
+      
+      // 更新選取計數
+      updateSelectionCount();
+      
+    } else {
+      resultDiv.innerHTML = '<span class="error">查無結果</span>';
+    }
+    
+  } catch (err) {
+    resultDiv.innerHTML = `<span class="error">發生錯誤：${err}</span>`;
+  }
+}
+
+// 更新已選擇項目計數
+function updateSelectionCount() {
+  const checked = document.querySelectorAll('.gpu-checkbox:checked');
+  const countSpan = document.getElementById('selection-count');
+  countSpan.textContent = `(已選擇 ${checked.length} 項)`;
+}
+
+// �����w�� GPU
+async function fetchSelectedGPUs(e) {
+  e.preventDefault();
+  
+  const keyword = document.getElementById('fetch-keyword').value.trim();
+  const resultDiv = document.getElementById('result');
+  
+  // ����Ҧ��襤�� checkbox
+  const checked = document.querySelectorAll('.gpu-checkbox:checked');
+  const selectedIndices = Array.from(checked).map(checkbox => parseInt(checkbox.value));
+  
+  if (selectedIndices.length === 0) {
+    resultDiv.innerHTML = '<span class="error">�Цܤֿ�ܤ@�� GPU</span>';
+    return;
+  }
+  
+  resultDiv.innerHTML = '<span class="loading">���b�����w�� GPU ��ơA�еy��...</span>';
+  
+  try {
+    const res = await fetch('/api/gpu-fetch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ keyword, selectedIndices })
+    });
+    
+    const data = await res.json();
+    
+    if (data.error) {
+      let debugInfo = '';
+      if (data.debug) {
+        debugInfo = `<details><summary>������T</summary><pre>${JSON.stringify(data.debug, null, 2)}</pre></details>`;
+      }
+      resultDiv.innerHTML = `<span class="error">${data.error}</span>` + debugInfo;
+    } else {
+      let html = '';
+      
+      if (data.links && data.links.length > 0) {
+        html += '<h3>������G�G</h3><ul>';
+        data.links.forEach(link => {
+          html += `<li><a href="${link.url}" target="_blank">${link.name}</a></li>`;
+        });
+        html += '</ul>';
+      }
+      
+      if (data.csv_url) {
+        html += `<div class="success">�w���� CSV�G<a href="${data.csv_url}" download>�U�����G</a></div>`;
+      }
+      
+      // ��ܭ�l��X�]�ոեΡ^
+      if (data.raw_stdout) {
+        html += `<details>
+          <summary>��l Python ��X</summary>
+          <pre style="max-height: 300px; overflow: auto; background: #f5f5f5; padding: 10px;">${data.raw_stdout}</pre>
+        </details>`;
+      }
+      
+      if (!html) html = '<span class="error">�������^���󵲪G</span>';
+      resultDiv.innerHTML = html;
+    }
+    
+  } catch (err) {
+    resultDiv.innerHTML = `<span class="error">�o�Ϳ��~�G${err}</span>`;
+  }
+}

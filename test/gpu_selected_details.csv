@@ -1,0 +1,4 @@
+﻿brand,name,release_year,launch_price,pixel_rate,texture_rate,fp16,fp32,fp64,memory_size,source_url
+NVIDIA,NVIDIA GeForce RTX 3050 6 GB,2024,179,47.04 GPixel/s,105.8 GTexel/s,6.774 TFLOPS (1:1),6.774 TFLOPS,105.8 GFLOPS (1:64),6 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-3050-6-gb.c4188
+NVIDIA,NVIDIA GeForce RTX 5060,2025,299,119.9 GPixel/s,299.6 GTexel/s,19.18 TFLOPS (1:1),19.18 TFLOPS,299.6 GFLOPS (1:64),8 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-5060.c4219
+NVIDIA,NVIDIA GeForce RTX 5070,2025,549,201.0 GPixel/s,482.3 GTexel/s,30.87 TFLOPS (1:1),30.87 TFLOPS,482.3 GFLOPS (1:64),12 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-5070.c4218

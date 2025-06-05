@@ -1,0 +1,2 @@
+﻿brand,name,release_year,launch_price,pixel_rate,texture_rate,fp16,fp32,fp64,memory_size,source_url
+NVIDIA,NVIDIA GeForce RTX 5050,2025,,80.64 GPixel/s,201.6 GTexel/s,12.90 TFLOPS (1:1),12.90 TFLOPS,201.6 GFLOPS (1:64),8 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-5050.c4220

@@ -49,6 +49,12 @@
             <li class="nav-item">
               <a class="nav-link text-white" href="/compare-charts">比較圖表</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/gpu-search">網路搜尋</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/deepseek-chat">AI 對話</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -120,6 +126,13 @@
     </div>
     </div>
 
+  <!-- 管理頁面快捷按鈕 -->
+  <div class="position-fixed bottom-0 end-0 m-3" style="z-index: 1000;">
+    <button class="btn btn-secondary btn-sm rounded-circle" id="managementBtn" title="聊天記錄管理" style="width: 50px; height: 50px;">
+      <i class="bi bi-gear-fill"></i>
+    </button>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/javascripts/gpu-app.js"></script>
   <script>
@@ -159,6 +172,11 @@
         if (e.key === 'Enter') {
           searchGPUs();
         }
+      });
+
+      // 管理頁面按鈕點擊事件
+      document.getElementById('managementBtn').addEventListener('click', () => {
+        window.open('/chat-history.html', '_blank');
       });
     });
   </script>

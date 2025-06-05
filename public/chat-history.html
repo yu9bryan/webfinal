@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 對話記錄管理 | GPU 資料庫</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <style>
+    .chat-record {
+      background-color: rgba(40, 40, 40, 0.8);
+      border: 1px solid var(--primary-green);
+      border-radius: 15px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    
+    .chat-header {
+      border-bottom: 1px solid rgba(116, 182, 0, 0.3);
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .user-message {
+      background-color: rgba(116, 182, 0, 0.1);
+      border-left: 4px solid var(--primary-green);
+      padding: 10px 15px;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .ai-response {
+      background-color: rgba(60, 60, 60, 0.6);
+      border-left: 4px solid #6c757d;
+      padding: 10px 15px;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .auth-modal {
+      background-color: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .auth-card {
+      background-color: rgba(30, 30, 30, 0.95);
+      border: 2px solid var(--primary-green);
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+    
+    .loading-spinner {
+      display: none;
+      text-align: center;
+      padding: 50px;
+    }
+    
+    .gpu-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    
+    .gpu-tag {
+      background-color: rgba(116, 182, 0, 0.2);
+      border: 1px solid var(--primary-green);
+      color: var(--primary-green);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+    
+    /* Markdown 內容樣式 */
+    .ai-response h1,
+    .ai-response h2,
+    .ai-response h3,
+    .ai-response h4,
+    .ai-response h5,
+    .ai-response h6 {
+      color: var(--primary-green);
+      margin: 15px 0 10px 0;
+      font-weight: bold;
+    }
+    
+    .ai-response ul,
+    .ai-response ol {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    
+    .ai-response strong {
+      color: var(--primary-green);
+      font-weight: bold;
+    }
+    
+    .ai-response code {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #ffc107;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    
+    .ai-response pre {
+      background-color: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(116, 182, 0, 0.3);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+    
+    .ai-response blockquote {
+      border-left: 4px solid var(--primary-green);
+      background-color: rgba(0, 0, 0, 0.2);
+      margin: 10px 0;
+      padding: 10px 15px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <!-- 認證模態框 -->
+  <div class="auth-modal" id="authModal">
+    <div class="auth-card">
+      <h3 class="text-success mb-4">
+        <i class="bi bi-shield-lock me-2"></i>
+        管理員認證
+      </h3>
+      <p class="text-light mb-4">請輸入管理員密碼以訪問AI對話記錄管理頁面</p>
+      <div class="mb-3">
+        <input type="password" class="form-control" id="passwordInput" placeholder="請輸入密碼">
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-success" onclick="authenticate()">
+          <i class="bi bi-unlock me-2"></i>驗證
+        </button>
+        <button class="btn btn-outline-secondary" onclick="goBack()">
+          <i class="bi bi-arrow-left me-2"></i>返回
+        </button>
+      </div>
+      <div id="authError" class="text-danger mt-3" style="display: none;"></div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="mainContent" style="display: none;">
+    <!-- 導航標題 -->
+    <header class="text-white p-3 mb-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="mb-0 d-flex align-items-center">
+            <i class="bi bi-chat-left-text me-2" style="font-size: 0.8em;"></i>
+            AI 對話記錄管理
+          </h1>
+          <p class="mb-0 text-success">管理所有用戶的AI對話記錄</p>
+        </div>
+        <nav>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/">查詢頁面</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/charts">NVIDIA 圖表</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/amd-charts">AMD 圖表</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/compare-charts">比較圖表</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/gpu-search">網路搜尋</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/deepseek-chat">AI 對話</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 控制區域 -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="card bg-dark border-success">
+          <div class="card-header">
+            <h5 class="mb-0">
+              <i class="bi bi-gear me-2"></i>管理控制
+            </h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <span class="badge bg-success me-2" id="totalRecords">總記錄數: 載入中...</span>
+                <span class="text-muted">最後更新: <span id="lastUpdate">載入中...</span></span>
+              </div>
+              <div>
+                <button class="btn btn-outline-success me-2" onclick="refreshData()">
+                  <i class="bi bi-arrow-clockwise me-1"></i>重新整理
+                </button>
+                <button class="btn btn-outline-danger" onclick="confirmDeleteAll()">
+                  <i class="bi bi-trash me-1"></i>清空所有記錄
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 載入中指示器 -->
+    <div class="loading-spinner" id="loadingSpinner">
+      <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">載入中...</span>
+      </div>
+      <p class="text-light mt-3">正在載入對話記錄...</p>
+    </div>
+
+    <!-- 對話記錄列表 -->
+    <div id="chatRecordsContainer">
+      <!-- 動態載入的對話記錄將顯示在這裡 -->
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 認證相關
+    async function authenticate() {
+      const password = document.getElementById('passwordInput').value;
+      const errorDiv = document.getElementById('authError');
+      
+      if (!password) {
+        errorDiv.textContent = '請輸入密碼';
+        errorDiv.style.display = 'block';
+        return;
+      }
+      
+      try {
+        const response = await fetch('/api/chat-history/auth', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ password })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          document.getElementById('authModal').style.display = 'none';
+          document.getElementById('mainContent').style.display = 'block';
+          loadChatHistory();
+        } else {
+          errorDiv.textContent = result.message || '密碼錯誤';
+          errorDiv.style.display = 'block';
+        }
+      } catch (error) {
+        errorDiv.textContent = '認證失敗，請稍後再試';
+        errorDiv.style.display = 'block';
+      }
+    }
+    
+    function goBack() {
+      window.location.href = '/';
+    }
+    
+    // 監聽Enter鍵
+    document.getElementById('passwordInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        authenticate();
+      }
+    });
+    
+    // 載入對話記錄
+    async function loadChatHistory() {
+      const loadingSpinner = document.getElementById('loadingSpinner');
+      const container = document.getElementById('chatRecordsContainer');
+      
+      loadingSpinner.style.display = 'block';
+      container.innerHTML = '';
+      
+      try {
+        const response = await fetch('/api/chat-history');
+        const records = await response.json();
+        
+        loadingSpinner.style.display = 'none';
+        
+        if (records.length === 0) {
+          container.innerHTML = `
+            <div class="text-center text-muted py-5">
+              <i class="bi bi-chat-left-text" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">暫無對話記錄</h4>
+              <p>當用戶開始使用AI對話功能時，記錄將會顯示在這裡。</p>
+            </div>
+          `;
+        } else {
+          displayChatRecords(records);
+        }
+        
+        // 更新統計資訊
+        document.getElementById('totalRecords').textContent = `總記錄數: ${records.length}`;
+        document.getElementById('lastUpdate').textContent = new Date().toLocaleString('zh-TW');
+        
+      } catch (error) {
+        loadingSpinner.style.display = 'none';
+        container.innerHTML = `
+          <div class="alert alert-danger">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            載入對話記錄失敗: ${error.message}
+          </div>
+        `;
+      }
+    }
+    
+    // 顯示對話記錄
+    function displayChatRecords(records) {
+      const container = document.getElementById('chatRecordsContainer');
+      
+      // 配置marked選項
+      if (typeof marked !== 'undefined') {
+        marked.setOptions({
+          breaks: true,
+          gfm: true,
+          sanitize: false,
+          smartypants: true
+        });
+      }
+        const recordsHtml = records.map(record => {
+        let selectedGpus = [];
+        try {
+          selectedGpus = Array.isArray(record.selected_gpus) ? record.selected_gpus : JSON.parse(record.selected_gpus || '[]');
+        } catch (e) {
+          console.warn('解析選中GPU失敗:', e);
+        }
+        
+        // 從 conversation_data 中提取用戶消息和AI回應
+        let conversationData = [];
+        try {
+          conversationData = Array.isArray(record.conversation_data) ? record.conversation_data : JSON.parse(record.conversation_data || '[]');
+        } catch (e) {
+          console.warn('解析對話數據失敗:', e);
+        }
+        
+        // 提取最後的用戶問題和AI回應
+        const userMessages = conversationData.filter(msg => msg.type === 'user');
+        const aiMessages = conversationData.filter(msg => msg.type === 'ai');
+        
+        const lastUserMessage = userMessages.length > 0 ? userMessages[userMessages.length - 1].content : '無用戶消息';
+        const lastAiMessage = aiMessages.length > 0 ? aiMessages[aiMessages.length - 1].content : '無AI回應';
+        
+        // 渲染AI回應的Markdown
+        let aiResponseHtml = lastAiMessage;
+        if (typeof marked !== 'undefined') {
+          try {
+            aiResponseHtml = marked.parse(lastAiMessage);
+          } catch (e) {
+            console.warn('Markdown渲染失敗:', e);
+            aiResponseHtml = lastAiMessage;
+          }
+        }
+        
+        const gpuTagsHtml = selectedGpus.length > 0 
+          ? selectedGpus.map(gpu => `<span class="gpu-tag">${gpu.name || 'GPU ID: ' + gpu}</span>`).join('')
+          : '<span class="text-muted">無選擇GPU</span>';
+        
+        return `
+          <div class="chat-record">
+            <div class="chat-header">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h6 class="text-success mb-1">
+                    <i class="bi bi-chat-dots me-2"></i>
+                    會話 ID: ${record.session_id}
+                  </h6>
+                  <small class="text-muted">
+                    <i class="bi bi-geo-alt me-1"></i>IP: ${record.user_ip || '未知'} | 
+                    <i class="bi bi-clock me-1"></i>時間: ${record.created_at}
+                  </small>
+                  <div class="gpu-tags">
+                    <strong class="text-light me-2">選中的GPU:</strong>
+                    ${gpuTagsHtml}
+                  </div>
+                </div>
+                <button class="btn btn-outline-danger btn-sm" onclick="deleteRecord(${record.id})" title="刪除此記錄">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            </div>
+            
+            <div class="user-message">
+              <strong class="text-success">
+                <i class="bi bi-person-fill me-2"></i>用戶問題:
+              </strong>
+              <div class="mt-2">${lastUserMessage}</div>
+            </div>
+            
+            <div class="ai-response">
+              <strong class="text-info">
+                <i class="bi bi-robot me-2"></i>AI 回應:
+              </strong>
+              <div class="mt-2">${aiResponseHtml}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      
+      container.innerHTML = recordsHtml;
+    }
+    
+    // 刷新資料
+    function refreshData() {
+      loadChatHistory();
+    }
+    
+    // 刪除單一記錄
+    async function deleteRecord(id) {
+      if (!confirm('確定要刪除這條對話記錄嗎？此操作無法復原。')) {
+        return;
+      }
+      
+      try {
+        const response = await fetch(`/api/chat-history/${id}`, {
+          method: 'DELETE'
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          loadChatHistory(); // 重新載入列表
+        } else {
+          alert('刪除失敗，請稍後再試');
+        }
+      } catch (error) {
+        alert('刪除失敗: ' + error.message);
+      }
+    }
+    
+    // 確認刪除所有記錄
+    function confirmDeleteAll() {
+      if (confirm('確定要清空所有對話記錄嗎？此操作無法復原！')) {
+        if (confirm('請再次確認：這將刪除所有對話記錄！')) {
+          deleteAllRecords();
+        }
+      }
+    }
+      // 刪除所有記錄
+    async function deleteAllRecords() {
+      const loadingSpinner = document.getElementById('loadingSpinner');
+      
+      try {
+        loadingSpinner.style.display = 'block';
+        
+        const response = await fetch('/api/chat-history', {
+          method: 'DELETE'
+        });
+        
+        const result = await response.json();
+        
+        loadingSpinner.style.display = 'none';
+        
+        if (result.success) {
+          alert(`${result.message || '已成功清空所有對話記錄'}`);
+          loadChatHistory(); // 重新載入列表
+        } else {
+          alert('清空失敗，請稍後再試');
+        }
+      } catch (error) {
+        loadingSpinner.style.display = 'none';
+        alert('清空失敗: ' + error.message);
+      }
+    }
+    
+    // 頁面載入時顯示認證模態框
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('passwordInput').focus();
+    });
+  </script>
+</body>
+</html>

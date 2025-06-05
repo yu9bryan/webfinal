@@ -1,0 +1,9 @@
+﻿brand,name,release_year,launch_price,pixel_rate,texture_rate,fp16,fp32,fp64,memory_size,source_url
+NVIDIA,NVIDIA GeForce RTX 3080,2020.0,699.0,164.2 GPixel/s,465.1 GTexel/s,29.77 TFLOPS (1:1),29.77 TFLOPS,465.1 GFLOPS (1:64),10 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-3080.c3621
+NVIDIA,NVIDIA GeForce RTX 3080 12 GB,2022.0,799.0,164.2 GPixel/s,478.8 GTexel/s,30.64 TFLOPS (1:1),30.64 TFLOPS,478.8 GFLOPS (1:64),12 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-3080-12-gb.c3834
+NVIDIA,NVIDIA GeForce RTX 3080 Max-Q,,,119.5 GPixel/s,239.0 GTexel/s,15.30 TFLOPS (1:1),15.30 TFLOPS,239.0 GFLOPS (1:64),8 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-3080-max-q.c3753
+NVIDIA,NVIDIA GeForce RTX 3080 Mobile,,,148.3 GPixel/s,296.6 GTexel/s,18.98 TFLOPS (1:1),18.98 TFLOPS,296.6 GFLOPS (1:64),8 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-3080-mobile.c3684
+NVIDIA,NVIDIA GeForce RTX 3080 Ti,2021.0,1199.0,186.5 GPixel/s,532.8 GTexel/s,34.10 TFLOPS (1:1),34.10 TFLOPS,532.8 GFLOPS (1:64),12 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-3080-ti.c3735
+NVIDIA,NVIDIA GeForce RTX 3080 Ti 20 GB,2022.0,1199.0,186.5 GPixel/s,532.8 GTexel/s,34.10 TFLOPS (1:1),34.10 TFLOPS,532.8 GFLOPS (1:64),20 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-3080-ti-20-gb.c3831
+NVIDIA,NVIDIA GeForce RTX 3080 Ti Max-Q,,,108.0 GPixel/s,261.0 GTexel/s,16.70 TFLOPS (1:1),16.70 TFLOPS,261.0 GFLOPS (1:64),16 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-3080-ti-max-q.c3841
+NVIDIA,NVIDIA GeForce RTX 3080 Ti Mobile,,,121.0 GPixel/s,292.3 GTexel/s,18.71 TFLOPS (1:1),18.71 TFLOPS,292.3 GFLOPS (1:64),16 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-3080-ti-mobile.c3840

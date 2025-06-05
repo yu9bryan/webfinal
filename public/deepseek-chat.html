@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSeek AI 對話 | GPU 資料庫</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <style>
+    /* 聊天區域樣式 */
+    .chat-section {
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(58, 58, 58, 0.9) 100%);
+      border: 2px solid var(--primary-green);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px 0;
+      box-shadow: 0 10px 30px rgba(116, 182, 0, 0.2);
+    }
+    
+    /* 聊天容器 */
+    .chat-container {
+      background-color: rgba(40, 40, 40, 0.8);
+      border: 1px solid var(--primary-green);
+      border-radius: 15px;
+      height: 500px;
+      overflow-y: auto;
+      padding: 20px;
+      margin-bottom: 20px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary-green) #333;
+    }
+    
+    .chat-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .chat-container::-webkit-scrollbar-track {
+      background: #333;
+      border-radius: 10px;
+    }
+    
+    .chat-container::-webkit-scrollbar-thumb {
+      background-color: var(--primary-green);
+      border-radius: 10px;
+    }
+    
+    /* 訊息樣式 */
+    .message {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .message.user {
+      justify-content: flex-end;
+    }
+    
+    .message.ai {
+      justify-content: flex-start;
+    }
+    
+    .message-content {
+      max-width: 80%;
+      padding: 12px 16px;
+      border-radius: 18px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    
+    .message.user .message-content {
+      background-color: var(--primary-green);
+      color: white;
+      border-bottom-right-radius: 6px;
+    }
+    
+    .message.ai .message-content {
+      background-color: rgba(60, 60, 60, 0.8);
+      color: var(--primary-white);
+      border-bottom-left-radius: 6px;
+      border: 1px solid rgba(116, 182, 0, 0.3);
+    }
+    
+    .message-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+      font-size: 1.2rem;
+    }
+    
+    .message.user .message-avatar {
+      background-color: var(--primary-green);
+      color: white;
+      order: 2;
+    }
+    
+    .message.ai .message-avatar {
+      background-color: rgba(116, 182, 0, 0.2);
+      color: var(--primary-green);
+      border: 2px solid var(--primary-green);
+    }
+    
+    /* 輸入區域 */
+    .input-section {
+      background-color: rgba(35, 35, 35, 0.8);
+      border: 1px solid var(--primary-green);
+      border-radius: 15px;
+      padding: 15px;
+    }
+    
+    .input-group .form-control {
+      background-color: rgba(40, 40, 40, 0.9);
+      border: 1px solid rgba(116, 182, 0, 0.5);
+      color: var(--primary-white);
+      border-radius: 10px 0 0 10px;
+    }
+    
+    .input-group .form-control:focus {
+      background-color: rgba(40, 40, 40, 1);
+      border-color: var(--primary-green);
+      box-shadow: 0 0 0 0.2rem rgba(116, 182, 0, 0.25);
+      color: var(--primary-white);
+    }
+    
+    .input-group .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    /* 按鈕動畫 */
+    .btn-send {
+      border-radius: 0 10px 10px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-send:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(116, 182, 0, 0.4);
+    }
+      /* 狀態指示器 */
+    .typing-indicator {
+      display: none;
+      color: rgba(255, 255, 255, 0.7);
+      font-style: italic;
+      animation: pulse 1.5s infinite;
+    }
+    
+    /* GPU 選擇區域樣式 */
+    .gpu-selection-section .card {
+      background-color: rgba(30, 30, 30, 0.9);
+      border: 1px solid var(--primary-green);
+    }
+    
+    .search-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: rgba(40, 40, 40, 0.95);
+      border: 1px solid var(--primary-green);
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .search-dropdown-item {
+      padding: 10px 15px;
+      cursor: pointer;
+      color: var(--primary-white);
+      border-bottom: 1px solid rgba(116, 182, 0, 0.2);
+      transition: background-color 0.2s ease;
+    }
+    
+    .search-dropdown-item:hover {
+      background-color: rgba(116, 182, 0, 0.2);
+    }
+    
+    .search-dropdown-item:last-child {
+      border-bottom: none;
+    }
+    
+    .selected-gpus {
+      min-height: 38px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    
+    .gpu-tag {
+      background-color: rgba(116, 182, 0, 0.2);
+      border: 1px solid var(--primary-green);
+      color: var(--primary-green);
+      padding: 4px 8px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .gpu-tag .remove-btn {
+      background: none;
+      border: none;
+      color: var(--primary-green);
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+      font-size: 0.8rem;
+    }
+    
+    .gpu-tag .remove-btn:hover {
+      color: #ff4444;
+    }
+    
+    .mb-3 {
+      position: relative;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+    
+    /* 信息框 */
+    .info-box {
+      background-color: rgba(40, 40, 40, 0.7);
+      border-left: 4px solid var(--primary-green);
+      padding: 15px 20px;
+      margin: 15px 0 25px;
+      border-radius: 4px;
+      color: var(--primary-white);
+    }
+    
+    /* 清空按鈕 */
+    .btn-clear {
+      background-color: rgba(220, 38, 38, 0.8);
+      border: 1px solid #dc2626;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-clear:hover {
+      background-color: #dc2626;
+      transform: translateY(-2px);
+    }
+    
+    /* Markdown 內容樣式 */
+    .message-content h1,
+    .message-content h2,
+    .message-content h3,
+    .message-content h4,
+    .message-content h5,
+    .message-content h6 {
+      color: var(--primary-green);
+      margin: 15px 0 10px 0;
+      font-weight: bold;
+    }
+    
+    .message-content h1 { font-size: 1.5rem; }
+    .message-content h2 { font-size: 1.3rem; }
+    .message-content h3 { font-size: 1.2rem; }
+    .message-content h4 { font-size: 1.1rem; }
+    .message-content h5 { font-size: 1rem; }
+    .message-content h6 { font-size: 0.9rem; }
+    
+    .message-content ul,
+    .message-content ol {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    
+    .message-content li {
+      margin: 5px 0;
+      line-height: 1.5;
+    }
+    
+    .message-content strong {
+      color: var(--primary-green);
+      font-weight: bold;
+    }
+    
+    .message-content em {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .message-content code {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #ffc107;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+    
+    .message-content pre {
+      background-color: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(116, 182, 0, 0.3);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+    
+    .message-content pre code {
+      background: none;
+      padding: 0;
+      color: #f8f9fa;
+    }
+    
+    .message-content blockquote {
+      border-left: 4px solid var(--primary-green);
+      background-color: rgba(0, 0, 0, 0.2);
+      margin: 10px 0;
+      padding: 10px 15px;
+      font-style: italic;
+    }
+    
+    .message-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+    }
+    
+    .message-content th,
+    .message-content td {
+      border: 1px solid rgba(116, 182, 0, 0.3);
+      padding: 8px 12px;
+      text-align: left;
+    }
+    
+    .message-content th {
+      background-color: rgba(116, 182, 0, 0.2);
+      color: var(--primary-green);
+      font-weight: bold;
+    }
+    
+    .message-content hr {
+      border: none;
+      border-top: 2px solid rgba(116, 182, 0, 0.3);
+      margin: 20px 0;
+    }
+    
+    .message-content p {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    
+    .message-content a {
+      color: var(--primary-green);
+      text-decoration: underline;
+    }
+    
+    .message-content a:hover {
+      color: #8bc34a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <!-- 導航標題 -->
+    <header class="text-white p-3 mb-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="mb-0 d-flex align-items-center">
+            <i class="bi bi-robot me-2" style="font-size: 0.8em;"></i>
+            DeepSeek AI 對話
+          </h1>
+          <p class="mb-0 text-success">智能助手，協助您解答 GPU 相關問題</p>
+        </div>
+        <nav>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/">查詢頁面</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/charts">NVIDIA 圖表</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/amd-charts">AMD 圖表</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/compare-charts">比較圖表</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/gpu-search">網路搜尋</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/deepseek-chat">AI 對話</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="chat-section">
+      <!-- 信息框 -->
+      <div class="info-box">
+        <div class="d-flex align-items-start">
+          <div class="me-3 mt-1">
+            <i class="bi bi-info-circle-fill text-success" style="font-size: 1.5rem;"></i>
+          </div>
+          <div>
+            <h5 class="mb-2">DeepSeek AI 智能助手</h5>
+            <ul class="mb-3">
+              <li class="mb-2">可以回答 GPU 規格、性能比較等技術問題</li>
+              <li class="mb-2">提供購買建議和價格分析</li>
+              <li class="mb-2">解釋圖表數據和技術術語</li>
+              <li class="mb-2">協助您選擇適合的 GPU 產品</li>
+            </ul>
+            <div class="alert alert-secondary bg-dark text-light py-2 mb-0">
+              <i class="bi bi-lightbulb me-2"></i><strong>提示:</strong> 您可以詢問如「RTX 4080 和 RTX 4070 Ti 哪個更適合 4K 遊戲？」
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- GPU 選擇區域 -->
+      <div class="gpu-selection-section mb-4">
+        <div class="card">
+          <div class="card-header bg-dark">
+            <h6 class="mb-0">
+              <i class="bi bi-cpu-fill me-2"></i>選擇 GPU 型號 (最多3個)
+            </h6>
+          </div>
+          <div class="card-body bg-dark">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="mb-3">
+                  <label for="gpuSearch" class="form-label text-light">搜尋 GPU：</label>
+                  <input type="text" class="form-control" id="gpuSearch" placeholder="輸入 GPU 名稱進行搜尋..." autocomplete="off">
+                  <div class="search-dropdown" id="searchDropdown"></div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label text-light">已選擇的 GPU：</label>
+                <div id="selectedGpus" class="selected-gpus">
+                  <div class="text-muted">尚未選擇任何 GPU</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 聊天容器 -->
+      <div class="chat-container" id="chatContainer">
+        <div class="message ai">
+          <div class="message-avatar">
+            <i class="bi bi-robot"></i>
+          </div>
+          <div class="message-content">
+            您好！我是 DeepSeek AI 助手。我可以幫您解答 GPU 相關的問題，包括性能比較、購買建議、技術規格等。請隨時向我提問！<br><br>
+            💡 <strong>提示：</strong>您可以先選擇最多3個 GPU 型號，這樣我就能根據這些 GPU 的詳細技術規格為您提供更精準的建議！
+          </div>
+        </div>
+      </div>
+      
+      <!-- 狀態指示器 -->
+      <div class="typing-indicator mb-3" id="typingIndicator">
+        <i class="bi bi-three-dots me-2"></i>AI 正在思考中...
+      </div>
+      
+      <!-- 輸入區域 -->
+      <div class="input-section">
+        <div class="row">
+          <div class="col-12">
+            <div class="input-group">
+              <textarea 
+                class="form-control" 
+                id="userInput" 
+                rows="3" 
+                placeholder="輸入您的問題...例如：RTX 4080 和 RX 7800 XT 哪個性價比更高？"
+                style="resize: none;"
+              ></textarea>
+              <button 
+                class="btn btn-success btn-send" 
+                type="button" 
+                id="sendButton"
+                onclick="sendMessage()"
+              >
+                <i class="bi bi-send-fill me-1"></i>
+                發送
+              </button>
+            </div>
+          </div>
+        </div>
+          <div class="row mt-3">
+          <div class="col-12 d-flex justify-content-between align-items-center">
+            <small class="text-muted">
+              <i class="bi bi-info-circle me-1"></i>
+              按 Enter 發送訊息，Shift+Enter 換行
+            </small>
+            <div>
+              <button 
+                class="btn btn-outline-success btn-sm me-2" 
+                onclick="exportChat()"
+                title="導出對話記錄為 Markdown 文件"
+              >
+                <i class="bi bi-download me-1"></i>
+                導出對話
+              </button>
+              <button 
+                class="btn btn-clear btn-sm"
+              onclick="clearChat()"
+            >
+              <i class="bi bi-trash me-1"></i>
+              清空對話
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+  <script src="/javascripts/deepseek-chat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

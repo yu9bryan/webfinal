@@ -1,0 +1,2 @@
+﻿brand,name,release_year,launch_price,pixel_rate,texture_rate,fp16,fp32,fp64,memory_size,source_url
+NVIDIA,NVIDIA GeForce RTX 3080 12 GB,2022,799,164.2 GPixel/s,478.8 GTexel/s,30.64 TFLOPS (1:1),30.64 TFLOPS,478.8 GFLOPS (1:64),12 GB,https://www.techpowerup.com/gpu-specs/geforce-rtx-3080-12-gb.c3834

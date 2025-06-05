@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPU 網路搜尋與匯出</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">  <style>
+    /* 整體搜尋區塊 */
+    .search-section {
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(58, 58, 58, 0.9) 100%);
+      border: 2px solid var(--primary-green);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px 0;
+      box-shadow: 0 10px 30px rgba(116, 182, 0, 0.2);
+    }
+    
+    /* 提示信息框 */
+    .info-box {
+      background-color: rgba(40, 40, 40, 0.7);
+      border-left: 4px solid var(--primary-green);
+      padding: 15px 20px;
+      margin: 15px 0 25px;
+      border-radius: 4px;
+      color: var(--primary-white);
+    }
+    
+    /* GPU 列表區域 */
+    .gpu-list {
+      margin: 15px 0;
+      border: 1px solid var(--primary-green);
+      border-radius: 10px;
+      padding: 15px;
+      background-color: rgba(35, 35, 35, 0.8);
+      color: var(--primary-white);
+      max-height: 400px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary-green) #333;
+    }
+    
+    .gpu-list::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .gpu-list::-webkit-scrollbar-track {
+      background: #333;
+      border-radius: 10px;
+    }
+    
+    .gpu-list::-webkit-scrollbar-thumb {
+      background-color: var(--primary-green);
+      border-radius: 10px;
+    }
+    
+    /* 各個 GPU 項目 */
+    .gpu-item {
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(116, 182, 0, 0.3);
+    }
+    
+    .gpu-item:last-child {
+      border-bottom: none;
+    }
+    
+    .gpu-item label {
+      display: block;
+      padding: 8px 10px;
+      margin-bottom: 0;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+      cursor: pointer;
+    }
+    
+    .gpu-item label:hover {
+      background-color: rgba(116, 182, 0, 0.1);
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    #fetch-form {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px dashed rgba(116, 182, 0, 0.5);
+    }
+      /* 結果區域 */
+    #result:not(:empty) {
+      background-color: rgba(40, 40, 40, 0.7);
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    #result h3 {
+      color: var(--primary-green);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    #result ul {
+      padding-left: 20px;
+    }
+    
+    #result li {
+      margin-bottom: 8px;
+    }
+    
+    /* 狀態顯示 */
+    .loading { 
+      color: #aaa; 
+      display: flex;
+      align-items: center;
+    }
+    
+    .loading:before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      border: 2px solid transparent;
+      border-top-color: #aaa;
+      border-radius: 50%;
+      animation: spinner 0.8s linear infinite;
+    }
+    
+    @keyframes spinner {
+      to { transform: rotate(360deg); }
+    }
+    
+    .error { 
+      color: #ff5252; 
+      padding: 10px;
+      background-color: rgba(255, 82, 82, 0.1);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .error:before {
+      content: "⚠️";
+      margin-right: 10px;
+    }
+    
+    .success { 
+      color: var(--primary-green);
+      padding: 10px;
+      background-color: rgba(116, 182, 0, 0.1);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .success:before {
+      content: "✓";
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    
+    /* GPU搜尋結果特定樣式 */
+    a {
+      color: var(--primary-green);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    a:hover {
+      color: #a0d600;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <!-- 導航標題 -->    <header class="text-white p-3 mb-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="mb-0 d-flex align-items-center">
+            <i class="bi bi-search me-2" style="font-size: 0.8em;"></i>
+            GPU 網路搜尋與匯出
+          </h1>
+          <p class="mb-0 text-success">從TechPowerUp搜尋GPU資料並匯入系統</p>
+        </div>
+        <nav>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/">查詢頁面</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/charts">NVIDIA 圖表</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/amd-charts">AMD 圖表</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/compare-charts">比較圖表</a>
+            </li>            <li class="nav-item">
+              <a class="nav-link active" href="/gpu-search">網路搜尋</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/deepseek-chat">AI 對話</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="search-section">
+    <div class="info-box">
+    <div class="d-flex align-items-start">
+      <div class="me-3 mt-1">
+        <i class="bi bi-info-circle-fill text-success" style="font-size: 1.5rem;"></i>
+      </div>
+      <div>
+        <h5 class="mb-2">GPU 搜尋與資料匯出功能</h5>
+        <ol class="mb-3">
+          <li class="mb-2">輸入關鍵字搜尋符合的 GPU <span class="badge bg-dark text-light">例如: RTX 3080, RX 6800</span></li>
+          <li class="mb-2">從搜尋結果中<strong>選擇</strong>您需要的 GPU</li>
+          <li class="mb-2">點擊「抓取選定項目」按鈕獲取詳細規格</li>
+          <li class="mb-2">完成後可下載 CSV 檔案或匯入到資料庫</li>
+        </ol>
+        <div class="alert alert-secondary bg-dark text-light py-2 mb-0">
+          <i class="bi bi-clock me-2"></i><strong>注意:</strong> 抓取可能需要 15-30 秒，請耐心等待。
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- 搜尋表單 -->
+  <form id="gpu-search-form" class="mb-4">
+    <div class="mb-3">
+      <label for="keyword" class="form-label">請輸入 GPU 關鍵字：</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="keyword" required placeholder="例如: RTX 3080" aria-describedby="search-btn">
+        <button class="btn btn-success" type="submit" id="search-btn">
+          <i class="bi bi-search"></i> 搜尋
+        </button>
+      </div>
+    </div>
+  </form>
+  
+  <!-- 搜尋結果與選擇表單 -->
+  <div id="search-result" class="hidden">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="mb-0">搜尋結果</h2>
+      <div class="selection-controls d-flex gap-2">
+        <button id="select-all" class="btn btn-outline-success btn-sm">
+          <i class="bi bi-check-all"></i> 全選
+        </button>
+        <button id="select-none" class="btn btn-outline-secondary btn-sm">
+          <i class="bi bi-x-lg"></i> 取消全選
+        </button>
+      </div>
+    </div>
+    
+    <div id="gpu-list" class="gpu-list">
+      <!-- 搜尋結果將在這裡動態插入 -->
+    </div>
+    
+    <form id="fetch-form" class="d-flex align-items-center mt-4">
+      <input type="hidden" id="fetch-keyword">
+      <button type="submit" class="btn btn-primary me-2">
+        <i class="bi bi-cloud-download"></i> 抓取選定項目
+      </button>
+      <span id="selection-count" class="badge bg-secondary"></span>
+    </form>
+  </div>
+    <!-- 抓取結果 -->
+  <div class="result-container mt-4">
+    <div class="result" id="result"></div>
+  </div>
+    <!-- 匯入資料庫按鈕 -->
+  <div id="import-section" class="hidden search-section mt-4">
+    <h3 class="d-flex align-items-center">
+      <i class="bi bi-database-add me-2"></i>
+      匯入資料庫
+    </h3>
+    <p>將抓取的 GPU 資料匯入到系統的資料庫中，匯入後可在圖表中顯示這些資料。</p>
+    <button id="import-to-db" class="btn btn-success">
+      <i class="bi bi-cloud-upload"></i> 匯入資料庫
+    </button>
+    <div id="import-result" class="mt-3 p-2"></div>
+  </div>
+  
+  <script src="/javascripts/gpu-search.js"></script>
+</body>
+</html>
